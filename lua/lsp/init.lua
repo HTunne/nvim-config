@@ -42,7 +42,7 @@ for _, lsp in ipairs(servers) do
  nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-nvim_lsp.pyls.setup { root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.getcwd()), on_attach = on_attach }
+nvim_lsp.pyright.setup { root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.getcwd()), on_attach = on_attach }
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
