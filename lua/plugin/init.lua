@@ -39,11 +39,15 @@ require "paq" {
   'tpope/vim-commentary';
   'tpope/vim-surround';
   'tpope/vim-repeat';
+  -- DAP
+  'mfussenegger/nvim-dap';
+  'nvim-telescope/telescope-dap.nvim';
+  'mfussenegger/nvim-dap-python';
+  'jbyuki/one-small-step-for-vimkind';
 
   'jupyter-vim/jupyter-vim';
 
   'vhyrro/neorg';
-  {'grafi-tt/lunajson', run='mv src lua'};
 }
 
 -- plugin config

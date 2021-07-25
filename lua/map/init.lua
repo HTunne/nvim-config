@@ -12,4 +12,5 @@ wk.register({
   l = require('map.lsp'),
   p = require('map.telescope'),
   j = require('map.jupyter'),
+  d = require('map.dap'),
 }, { prefix = "<leader>" })
