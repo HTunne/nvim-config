@@ -36,6 +36,7 @@ require "paq" {
   'kyazdani42/nvim-tree.lua';
   'folke/which-key.nvim';
   'easymotion/vim-easymotion';
+  'lewis6991/gitsigns.nvim';
   'tpope/vim-commentary';
   'tpope/vim-surround';
   'tpope/vim-repeat';
@@ -58,3 +59,4 @@ require('plugin.nvim-compe-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
+require('gitsigns').setup()

@@ -12,5 +12,6 @@ wk.register({
   l = require('map.lsp'),
   p = require('map.telescope'),
   j = require('map.jupyter'),
+  h = require('map.gitsigns'),
   d = require('map.dap'),
 }, { prefix = "<leader>" })
