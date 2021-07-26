@@ -1,0 +1,23 @@
+return {
+  name = '+easymotion',
+  f = 'Find {char} to the right.',
+  F = 'Find {char} to the left.',
+  t = 'Till before the {char} to the right.',
+  T = 'Till after the {char} to the left.',
+  w = 'Beginning of word forward.',
+  W = 'Beginning of WORD forward.',
+  b = 'Beginning of word backward.',
+  B = 'Beginning of WORD backward.',
+  e = 'End of word forward.',
+  E = 'End of WORD forward.',
+  g = {
+    name = '+goto',
+    e = 'End of word backward.',
+    E = 'End of WORD backward.',
+  },
+  j = 'Line downward.',
+  k = 'Line upward.',
+  n = 'Jump to latest "/" or "?" forward.',
+  N = 'Jump to latest "/" or "?" backward.',
+  s = 'Find(Search) {char} forward and backward.',
+}
