@@ -5,7 +5,7 @@ local wk = require("which-key")
 
 wk.register({
   ["<space>"] = require('map.easymotion'),
-  c =  { '<cmd>nog<CR>', 'clear highlights' },
+  c =  { '<cmd>noh<CR>', 'clear highlights' },
   o =  { 'm`o<Esc>0D``', 'newline below' },
   s =  { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
   e =  { '<cmd>NvimTreeToggle<CR>', 'open nvim tree' },
