@@ -35,7 +35,7 @@ require "paq" {
   --  Convenience
   'kyazdani42/nvim-tree.lua';
   'folke/which-key.nvim';
-  'easymotion/vim-easymotion';
+  'phaazon/hop.nvim';
   'lewis6991/gitsigns.nvim';
   'tpope/vim-commentary';
   'tpope/vim-surround';
@@ -60,3 +60,5 @@ require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
 require('gitsigns').setup()
+require('which-key').setup({ plugins = { spelling = { enabled=true }}})
+require('hop').setup()

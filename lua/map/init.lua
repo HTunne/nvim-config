@@ -4,7 +4,8 @@
 local wk = require("which-key")
 
 wk.register({
-  ["<space>"] = require('map.easymotion'),
+  -- ["<space>"] = require('map.easymotion'),
+  ["<space>"] = require('map.hop'),
   c =  { '<cmd>noh<CR>', 'clear highlights' },
   o =  { 'm`o<Esc>0D``', 'newline below' },
   s =  { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
