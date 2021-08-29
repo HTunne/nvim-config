@@ -17,3 +17,5 @@ wk.register({
   h = require('map.gitsigns'),
   d = require('map.dap'),
 }, { prefix = "<leader>" })
+
+wk.register(require('map.barbar'))
