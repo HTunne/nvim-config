@@ -1,49 +1,72 @@
+local dap = require('dap')
+local var = require('dap.ui.variables')
+local widgets = require('dap.ui.widgets')
+local tele = require('telescope')
+
 return {
   name = '+dap',
-  c = { require('dap').continue, 'continue' },
-  v = { require('dap').step_over, 'step over' },
-  i = { require('dap').step_into, 'step into' },
-  o = { require('dap').step_out, 'step out' },
-  b = { require('dap').toggle_breakpoint, 'toggle breakpoint' },
+  c = { dap.continue, 'continue' },
+  v = { dap.step_over, 'step over' },
+  i = { dap.step_into, 'step into' },
+  o = { dap.step_out, 'step out' },
+  b = { dap.toggle_breakpoint, 'toggle breakpoint' },
 
-  sc = { require('dap.ui.variables').scopes, '' },
-  hh = { require('dap.ui.variables').hover, '' },
-  hv = { require('dap.ui.variables').visual_hover, '' },
+  u = {
+    name = '+ui',
+    s = { var.scopes, 'ui scopes' },
+    h = { var.hover, 'ui hover' },
+    v = { var.visual_hover, 'ui visual hover' },
+  },
 
-  uh = { require('dap.ui.widgets').hover, '' },
-  uf = {
-    function() local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes) end,
-    ''
+  w = {
+    name = '+widgets',
+    h = { widgets.hover, 'widgets hover' },
+    s = {
+      function() widgets.centered_float(widgets.scopes) end,
+      'widgets scopes'
+    }
   },
-  sbr = {
-    function() require('dap').set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
-    ''
+
+  s = {
+    name = '+set breakpoint',
+    r = {
+      function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+      'set conditional breakpoint'
+    },
+    m = {
+      function() dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
+      'set breakpoint with log message'
+    }
   },
-  sbm = {
-    function() require('dap').set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
-    ''
+
+  r = {
+    name = '+repl',
+    o = { dap.repl.open, 'repl open' },
+    l = { dap.repl.run_last, 'repl run last' },
   },
-  ro = { require('dap').repl.open, '' },
-  rl = { require('dap').repl.run_last, '' },
+
 -- telescope-dap
-  cc = {
-    function() require('telescope').extensions.dap.commands{} end,
-    ''
-  },
-  co = {
-    function() require('telescope').extensions.dap.configurations{} end,
-    ''
-  },
-  lb = {
-    function() require('telescope').extensions.dap.list_breakpoints{} end,
-    ''
-  },
-  tv = {
-    function() require('telescope').extensions.dap.variables{} end,
-    ''
-  },
-  f = {
-    function() require('telescope').extensions.dap.frames{} end,
-    ''
-  },
+  t = {
+    name = '+telescope-dap',
+    c = {
+      function() tele.extensions.dap.commands{} end,
+      'telescope commands'
+    },
+    o = {
+      function() tele.extensions.dap.configurations{} end,
+      'telescope configurations'
+    },
+    b = {
+      function() tele.extensions.dap.list_breakpoints{} end,
+      'telescope breakpoints'
+    },
+    v = {
+      function() tele.extensions.dap.variables{} end,
+      'telescope variables'
+    },
+    f = {
+      function() tele.extensions.dap.frames{} end,
+      'telescope frames'
+    },
+  }
 }
