@@ -6,7 +6,8 @@ require "paq" {
   'savq/paq-nvim';    -- paq-nvim manages itself
   -- Aesthetic
   'HTunne/vim-one';
-  'itchyny/lightline.vim';
+  'hoob3rt/lualine.nvim';
+  'romgrk/barbar.nvim';
   {'RRethy/vim-hexokinase', run='make hexokinase'};
   'kyazdani42/nvim-web-devicons';
   -- lsp
@@ -59,6 +60,7 @@ require('plugin.nvim-compe-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
+require('lualine').setup({ options = { theme = 'onedark', section_separators = '', component_separators = '' }})
 require('gitsigns').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
