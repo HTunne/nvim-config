@@ -2,7 +2,18 @@
 --  paq  --
 -----------
 
-require "paq" {
+-- Bootsrap paq
+local fn = vim.fn
+
+local install_path = fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
+local install_required = false
+
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
+  install_required = true
+end
+
+require('paq')({
   'savq/paq-nvim';    -- paq-nvim manages itself
   -- Aesthetic
   'HTunne/vim-one';
@@ -10,6 +21,7 @@ require "paq" {
   'romgrk/barbar.nvim';
   {'RRethy/vim-hexokinase', run='make hexokinase'};
   'kyazdani42/nvim-web-devicons';
+  'folke/zen-mode.nvim';
   -- lsp
   'neovim/nvim-lspconfig';
   -- Treesitter
@@ -43,6 +55,7 @@ require "paq" {
   'tpope/vim-repeat';
   -- DAP
   'mfussenegger/nvim-dap';
+  'rcarriga/nvim-dap-ui';
   'nvim-telescope/telescope-dap.nvim';
   'mfussenegger/nvim-dap-python';
   'jbyuki/one-small-step-for-vimkind';
@@ -50,7 +63,11 @@ require "paq" {
   'jupyter-vim/jupyter-vim';
 
   'vhyrro/neorg';
-}
+})
+
+if install_required then
+  vim.api.nvim_command('PaqInstall')
+end
 
 -- plugin config
 require('plugin.treesitter-config')
