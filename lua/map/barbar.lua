@@ -18,13 +18,13 @@ return {
 -- Close buffer
   ['<A-c>'] = { '<cmd>BufferClose<cr>', 'close buffer' },
 -- Wipeout buffer
---                 <cmd>BufferWipeout<cr>
+  ['<A-w>'] = { '<cmd>BufferWipeout<cr>', 'buffer wipeout' },
 -- Close commands
---                 <cmd>BufferCloseAllButCurrent<cr>
---                 <cmd>BufferCloseBuffersLeft<cr>
---                 <cmd>BufferCloseBuffersRight<cr>
+  ['<A-C>'] = { '<cmd>BufferCloseAllButCurrent<cr>', 'close all but current buffer' },
+  ['<A-h>'] = { '<cmd>BufferCloseBuffersLeft<cr>', 'close buffers left' },
+  ['<A-l>'] = { '<cmd>BufferCloseBuffersRight<cr>', 'close buffers right' },
 -- Magic buffer-picking mode
-  ['<C-p>'] = { '<cmd>BufferPick<cr>', 'pick buffer' },
+  ['<A-p>'] = { '<cmd>BufferPick<cr>', 'pick buffer' },
 -- Sort automatically by...
   ['<leader>'] = {
     ['b'] = {
