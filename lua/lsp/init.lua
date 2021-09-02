@@ -37,7 +37,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "rust_analyzer", "vuels", "ccls", "texlab", "tsserver" }
+local servers = { 'rust_analyzer', 'vuels', 'ccls', 'texlab', 'tsserver' }
 for _, lsp in ipairs(servers) do
  nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -46,7 +46,7 @@ nvim_lsp.pyright.setup { root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.ge
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
-  cmd = { "lua-language-server", "-E" },
+  cmd = { 'lua-language-server', '-E' },
   settings = {
     Lua = {
       runtime = {

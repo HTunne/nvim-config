@@ -30,11 +30,11 @@ return {
   s = {
     name = '+set breakpoint',
     r = {
-      function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+      function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
       'set conditional breakpoint'
     },
     m = {
-      function() dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end,
+      function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,
       'set breakpoint with log message'
     }
   },
