@@ -3,20 +3,47 @@
 -----------
 local wk = require('which-key')
 
+-- normal mode mappings
 wk.register({
-  -- ["<space>"] = require('map.easymotion'),
+  Y = {'y$', 'yank to end of line'},
+  n = {'nzzzv', 'centre after n'},
+  N = {'Nzzzv', 'centre after N'},
+})
+
+-- insert mode mappings
+wk.register({
+  [','] = { ',<c-g>u', 'set undo breakpoint on ,' },
+  ['.'] = { '.<c-g>u', 'set undo breakpoint on .' },
+  ['!'] = { '!<c-g>u', 'set undo breakpoint on !' },
+  ['?'] = { '?<c-g>u', 'set undo breakpoint on ?' }
+}, { mode = 'i' })
+
+-- visual mode mappings
+wk.register({
+  J = { ":m '>+1<cr>gv=gv", 'move highlighted region down' },
+  K = { ":m '<-2<cr>gv=gv", 'move highlighted region up' },
+}, { mode = 'v' })
+
+-- leader mappings
+wk.register({
   ['<space>'] = require('map.hop'),
   c = { '<cmd>noh<CR>', 'clear highlights' },
-  o = { 'm`o<Esc>0D``', 'newline below' },
-  s = { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
-  e = { '<cmd>NvimTreeToggle<CR>', 'open nvim tree' },
-  z = { require('zen-mode').toggle, 'zen mode' },
-  w = require('map.vimwiki'),
-  l = require('map.lsp'),
-  p = require('map.telescope'),
-  j = require('map.jupyter'),
-  h = require('map.gitsigns'),
   d = require('map.dap'),
+  e = { '<cmd>NvimTreeToggle<CR>', 'open nvim tree' },
+  f = {
+    function() if vim.opt.foldcolumn:get() == "1" then vim.opt.foldcolumn = "0" else vim.opt.foldcolumn = "1" end end,
+    'toggle foldcolumn' },
+  h = require('map.gitsigns'),
+  j = { ':m .+1<cr>==', 'move line down' },
+  k = { ':m .-2<cr>==', 'move line up' },
+  l = require('map.lsp'),
+  o = { 'm`o<Esc>0D``', 'newline below' },
+  p = require('map.telescope'),
+  s = { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
+  w = require('map.vimwiki'),
+  y = require('map.jupyter'),
+  z = { require('zen-mode').toggle, 'zen mode' },
 }, { prefix = '<leader>' })
 
 wk.register(require('map.barbar'))
+
