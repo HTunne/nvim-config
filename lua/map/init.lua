@@ -36,7 +36,6 @@ wk.register({
   h = require('map.gitsigns'),
   j = { ':m .+1<cr>==', 'move line down' },
   k = { ':m .-2<cr>==', 'move line up' },
-  l = require('map.lsp'),
   o = { 'm`o<Esc>0D``', 'newline below' },
   p = require('map.telescope'),
   s = { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
@@ -45,5 +44,6 @@ wk.register({
   z = { require('zen-mode').toggle, 'zen mode' },
 }, { prefix = '<leader>' })
 
+wk.register(require('map.lsp'))
 wk.register(require('map.barbar'))
 
