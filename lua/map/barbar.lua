@@ -1,4 +1,5 @@
 return {
+  name = '+buffers',
   ['<A-,>'] = { '<cmd>BufferPrevious<cr>', 'goto previous buffer' },
   ['<A-.>'] = { '<cmd>BufferNext<cr>', 'got next buffer' },
 -- Re-order to previous/next
