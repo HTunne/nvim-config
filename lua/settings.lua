@@ -18,7 +18,7 @@ opt('b', 'tabstop', indent)                           -- Number of spaces tabs c
 opt('b', 'shiftwidth', indent)                        -- Size of an indent
 opt('b', 'smartindent', true)                         -- Insert indents automatically
 opt('o', 'background', 'dark')
-opt('o', 'completeopt', 'menuone,noselect')           -- Completion options.
+opt('o', 'completeopt', 'menu,menuone,noselect')           -- Completion options.
 opt('o', 'hidden', true)                              -- Enable modified buffers in background
 opt('o', 'joinspaces', false)                         -- No double spaces with join after a dot
 opt('o', 'scrolloff', 4 )                             -- Lines of context

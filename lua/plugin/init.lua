@@ -28,12 +28,10 @@ require('paq')({
   'nvim-treesitter/nvim-treesitter';
   'nvim-treesitter/playground';
   -- Completion
-  --paq {'nvim-lua/completion-nvim'}
-  --paq {'ervandew/supertab'}
-  --paq {'nvim-treesitter/completion-treesitter'}
-  'hrsh7th/nvim-compe'; -- Switch when regex transform is supported
-  'hrsh7th/vim-vsnip';
-  'hrsh7th/vim-vsnip-integ';
+  'hrsh7th/cmp-nvim-lsp';
+  'hrsh7th/cmp-buffer';
+  'quangnguyen30192/cmp-nvim-ultisnips';
+  'hrsh7th/nvim-cmp';
   -- Telescope
   'nvim-lua/popup.nvim';
   'nvim-lua/plenary.nvim';
@@ -42,6 +40,7 @@ require('paq')({
   -- Snippets
   'sirver/ultisnips';
   'htunne/vim-snippets';
+
   -- VimWiki
   'vimwiki/vimwiki';
   'tools-life/taskwiki';
@@ -73,7 +72,7 @@ end
 require('plugin.treesitter-config')
 require('plugin.nvim-tree-config')
 --require('plugin.complete-config')
-require('plugin.nvim-compe-config')
+require('plugin.nvim-cmp-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')

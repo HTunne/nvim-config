@@ -2,7 +2,7 @@
 --  lsp  --
 -----------
 
-local nvim_lsp = require 'lspconfig'
+local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   local function buf_map(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_opt(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -39,12 +39,19 @@ end
 -- and map buffer local keybindings when the language server attaches
 local servers = { 'rust_analyzer', 'vuels', 'ccls', 'texlab', 'tsserver' }
 for _, lsp in ipairs(servers) do
- nvim_lsp[lsp].setup { on_attach = on_attach }
+ nvim_lsp[lsp].setup({
+    on_attach = on_attach,
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  })
 end
 
-nvim_lsp.pyright.setup { root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.getcwd()), on_attach = on_attach }
+nvim_lsp.pyright.setup({
+  root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.getcwd()),
+  on_attach = on_attach,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+})
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup({
   on_attach = on_attach,
   cmd = { 'lua-language-server', '-E' },
   settings = {
@@ -68,6 +75,7 @@ nvim_lsp.sumneko_lua.setup {
       },
     },
   },
-}
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+})
 
 
