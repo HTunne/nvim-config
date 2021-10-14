@@ -19,7 +19,7 @@ require('paq')({
   'HTunne/vim-one';
   'hoob3rt/lualine.nvim';
   'romgrk/barbar.nvim';
-  {'RRethy/vim-hexokinase', run='make hexokinase'};
+  'norcalli/nvim-colorizer.lua';
   'kyazdani42/nvim-web-devicons';
   'folke/zen-mode.nvim';
   -- lsp
@@ -78,6 +78,7 @@ require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
 require('lualine').setup({ options = { theme = 'onedark', section_separators = '', component_separators = '' }})
+require('colorizer').setup()
 require('gitsigns').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
