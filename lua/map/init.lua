@@ -45,5 +45,6 @@ wk.register({
 }, { prefix = '<leader>' })
 
 wk.register(require('map.lsp'))
+--wk.register(require('map.cmp'))
 wk.register(require('map.barbar'))
 
