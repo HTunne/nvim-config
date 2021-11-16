@@ -75,6 +75,7 @@ require('paq')({
   -- DAP
   'mfussenegger/nvim-dap';
   'rcarriga/nvim-dap-ui';
+  'theHamsta/nvim-dap-virtual-text';
   'nvim-telescope/telescope-dap.nvim';
   'mfussenegger/nvim-dap-python';
   'jbyuki/one-small-step-for-vimkind';
@@ -108,3 +109,4 @@ require('gitsigns').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
 vim.g.UltiSnipsRemoveSelectModeMappings = 0
+require('nvim-dap-virtual-text').setup()
