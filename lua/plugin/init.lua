@@ -92,7 +92,6 @@ end
 -- plugin config
 require('plugin.treesitter-config')
 require('plugin.nvim-tree-config')
---require('plugin.complete-config')
 require('plugin.nvim-cmp-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
