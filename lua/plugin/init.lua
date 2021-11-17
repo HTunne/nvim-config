@@ -44,7 +44,8 @@ require('paq')({
   'hrsh7th/cmp-nvim-lua';
   'hrsh7th/cmp-calc';
   'ray-x/cmp-treesitter';
-  'quangnguyen30192/cmp-nvim-ultisnips';
+  'saadparwaiz1/cmp_luasnip';
+  -- 'quangnguyen30192/cmp-nvim-ultisnips';
   'f3fora/cmp-spell';
   'onsails/lspkind-nvim';
   'hrsh7th/nvim-cmp';
@@ -56,8 +57,9 @@ require('paq')({
   'nvim-telescope/telescope-fzy-native.nvim';
 
   -- Snippets
-  'sirver/ultisnips';
-  'htunne/vim-snippets';
+  'L3MON4D3/LuaSnip';
+  -- 'sirver/ultisnips';
+  -- 'htunne/vim-snippets';
 
   -- VimWiki
   'vimwiki/vimwiki';
@@ -107,5 +109,5 @@ require('colorizer').setup()
 require('gitsigns').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
-vim.g.UltiSnipsRemoveSelectModeMappings = 0
+-- vim.g.UltiSnipsRemoveSelectModeMappings = 0
 require('nvim-dap-virtual-text').setup()

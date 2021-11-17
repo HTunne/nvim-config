@@ -1,15 +1,40 @@
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
-local has_any_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-    return false
-  end
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+local t = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local press = function(key)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), "n", true)
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
+
+local tab_complete = function()
+    if cmp and cmp.visible() then
+        cmp.select_next_item()
+    elseif luasnip and luasnip.expand_or_jumpable() then
+        return t("<Plug>luasnip-expand-or-jump")
+    elseif check_back_space() then
+        return t "<Tab>"
+    else
+        cmp.complete()
+    end
+    return ""
+end
+local s_tab_complete = function()
+    if cmp and cmp.visible() then
+        cmp.select_prev_item()
+    elseif luasnip and luasnip.jumpable(-1) then
+        return t("<Plug>luasnip-jump-prev")
+    else
+        return t "<S-Tab>"
+    end
+    return ""
 end
 
 return {
@@ -22,54 +47,6 @@ return {
   ['<C-f>'] = { function() cmp.mapping.scroll_docs(4) end, 'scroll docs down' },
   ['<C-e>'] = { cmp.mapping.close, '' },
   ['<CR>'] = { function() cmp.mapping.confirm({ select = true }) end, '' },
-
-  -- Configure for <TAB> people
-  -- - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
-  -- - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
-  -- - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
-  -- - <C-space> to expand the selected snippet from completion menu
-  ["<C-Space>"] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-        return press("<C-R>=UltiSnips#ExpandSnippet()<CR>")
-      end
-
-      cmp.select_next_item()
-    elseif has_any_words_before() then
-      press("<Space>")
-    else
-      fallback()
-    end
-  end, {
-      "i",
-      "s",
-    }),
-  ["<Tab>"] = cmp.mapping(function(fallback)
-    if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-      press("<C-R>=UltiSnips#ExpandSnippet()<CR>")
-    elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-      press("<ESC>:call UltiSnips#JumpForwards()<CR>")
-    elseif cmp.visible() then
-      cmp.select_next_item()
-    elseif has_any_words_before() then
-      press("<Tab>")
-    else
-      fallback()
-    end
-  end, {
-      "i",
-      "s",
-    }),
-  ["<S-Tab>"] = cmp.mapping(function(fallback)
-    if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-      press("<ESC>:call UltiSnips#JumpBackwards()<CR>")
-    elseif cmp.visible() then
-      cmp.select_prev_item()
-    else
-      fallback()
-    end
-  end, {
-      "i",
-      "s",
-    }),
+  ["<Tab>"] = { tab_complete, 'Tab complete', { 'i', 's' } },
+  ["<S-Tab>"] = { s_tab_complete, 'Shift Tab complete', { 'i', 's' } },
 }

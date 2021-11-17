@@ -24,12 +24,12 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'calc' },
     { name = 'treesitter' },
-    { name = 'ultisnips' },
+    { name = 'luasnip' },
     { name = 'spell' },
   },
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   formatting = {
@@ -45,7 +45,7 @@ cmp.setup({
         nvim_lua = "",
         calc = "=",
         treesitter = "",
-        ultisnips = "",
+        luasnip = "",
         spell = "暈",
       })[entry.source.name]
 
@@ -58,56 +58,4 @@ cmp.setup({
   documentation = {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
-  mapping = {
-    ["<C-Space>"] = cmp.mapping(
-      function(fallback)
-        if cmp.visible() then
-          if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-            return press("<C-R>=UltiSnips#ExpandSnippet()<CR>")
-          end
-
-          cmp.select_next_item()
-        elseif has_any_words_before() then
-          press("<Space>")
-        else
-          fallback()
-        end
-      end, {
-        "i",
-        "s",
-      }
-    ),
-    ["<Tab>"] = cmp.mapping(
-      function(fallback)
-        if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-          press("<C-R>=UltiSnips#ExpandSnippet()<CR>")
-        elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-          press("<ESC>:call UltiSnips#JumpForwards()<CR>")
-        elseif cmp.visible() then
-          cmp.select_next_item()
-        elseif has_any_words_before() then
-          press("<Tab>")
-        else
-          fallback()
-        end
-      end, {
-        "i",
-        "s",
-      }
-    ),
-    ["<S-Tab>"] = cmp.mapping(
-      function(fallback)
-        if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-          press("<ESC>:call UltiSnips#JumpBackwards()<CR>")
-        elseif cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end, {
-        "i",
-        "s",
-      }
-    )
-  }
 })
