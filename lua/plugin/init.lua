@@ -58,6 +58,7 @@ require('paq')({
 
   -- Snippets
   'L3MON4D3/LuaSnip';
+  'rafamadriz/friendly-snippets';
   -- 'sirver/ultisnips';
   -- 'htunne/vim-snippets';
 
@@ -95,6 +96,7 @@ end
 require('plugin.treesitter-config')
 require('plugin.nvim-tree-config')
 require('plugin.nvim-cmp-config')
+require('plugin.luasnip-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
