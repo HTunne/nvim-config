@@ -71,7 +71,7 @@ require('paq')({
   'folke/which-key.nvim';
   'phaazon/hop.nvim';
   'lewis6991/gitsigns.nvim';
-  'tpope/vim-commentary';
+  'numToStr/Comment.nvim';
   'tpope/vim-surround';
   'tpope/vim-repeat';
 
@@ -109,6 +109,7 @@ require('lualine').setup({
 })
 require('colorizer').setup()
 require('gitsigns').setup()
+require('Comment').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
 -- vim.g.UltiSnipsRemoveSelectModeMappings = 0
