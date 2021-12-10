@@ -37,8 +37,14 @@ ls.snippets = {
 	--     - luasnip.all
 	-- are searched in that order.
 	all = {
+    s("datetime", {
+      f(function(_, _) return os.date() end, {})
+    }),
     s("date", {
       f(function(_, _) return os.date("%Y-%m-%d") end, {})
+    }),
+    s("time", {
+      f(function(_, _) return os.date("%H:%M:%S") end, {})
     }),
     s("pass", {
       f(bash, {}, "< /dev/urandom tr -dc [:graph:] | head -c 32"),
