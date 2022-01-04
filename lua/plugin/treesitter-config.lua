@@ -13,26 +13,7 @@ parser_configs.norg = {
 
 local ts = require 'nvim-treesitter.configs'
 ts.setup {
-  ensure_installed = {
-    'bash',
-    'bibtex',
-    'c',
-    'cpp',
-    'css',
-    'html',
-    'javascript',
-    'json',
-    'latex',
-    'lua',
-    'python',
-    'regex',
-    'rust',
-    'scss',
-    'toml',
-    'typescript',
-    'vue',
-    'norg'
-  },
+  ensure_installed = 'maintained',
   highlight = {enable = true},
   indent = {enable = true},
 }
