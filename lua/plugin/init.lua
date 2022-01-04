@@ -32,6 +32,7 @@ require('paq')({
 
   -- lsp
   'neovim/nvim-lspconfig';
+  'jose-elias-alvarez/null-ls.nvim';
 
   -- Treesitter
   'nvim-treesitter/nvim-treesitter';
@@ -100,6 +101,7 @@ require('plugin.luasnip-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
+require('plugin.null-ls')
 require('onedark').setup({
 })
 require('lualine').setup({
