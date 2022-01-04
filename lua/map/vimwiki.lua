@@ -4,7 +4,7 @@ return {
   i = 'Vimwiki Diary Index',
   t = 'Vimwiki Tab Index',
   s = 'Vimwiki UI Select ',
-  SPC = {
+  ['<space>'] = {
     name = '+diary',
     i = 'Vimwiki Diary Generate Links',
     t = 'Vimwiki Tab Make Diary Note',
