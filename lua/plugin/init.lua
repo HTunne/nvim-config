@@ -23,7 +23,7 @@ require('paq')({
   'savq/paq-nvim';    -- paq-nvim manages itself
 
   -- Aesthetic
-  'HTunne/vim-one';
+  'monsonjeremy/onedark.nvim';
   'hoob3rt/lualine.nvim';
   'romgrk/barbar.nvim';
   'norcalli/nvim-colorizer.lua';
@@ -100,6 +100,8 @@ require('plugin.luasnip-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
 require('plugin.neorg-config')
+require('onedark').setup({
+})
 require('lualine').setup({
   options = {
     theme = 'onedark',

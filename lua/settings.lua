@@ -32,7 +32,6 @@ opt('o', 'showmode', false)
 
 vim.g.mapleader = ' '
 vim.g.tex_flavor = 'latex'
-vim.g.colors_name = 'one'
 vim.g.bufferline = { auto_hide = true }
 
 vim.api.nvim_exec(
