@@ -39,6 +39,7 @@ wk.register({
   o = { 'm`o<Esc>0D``', 'newline below' },
   p = require('map.telescope'),
   s = { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
+  t = { '<cmd>Trouble<CR>', 'trouble' },
   w = require('map.vimwiki'),
   y = require('map.jupyter'),
   z = { require('zen-mode').toggle, 'zen mode' },

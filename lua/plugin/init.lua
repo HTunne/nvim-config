@@ -29,6 +29,7 @@ require('paq')({
   'norcalli/nvim-colorizer.lua';
   'kyazdani42/nvim-web-devicons';
   'folke/zen-mode.nvim';
+  'folke/trouble.nvim';
 
   -- lsp
   'neovim/nvim-lspconfig';
@@ -113,6 +114,7 @@ require('lualine').setup({
 })
 require('colorizer').setup()
 require('gitsigns').setup()
+require("trouble").setup()
 require('Comment').setup()
 require('which-key').setup({ plugins = { spelling = { enabled=true }}})
 require('hop').setup()
