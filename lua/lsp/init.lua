@@ -33,6 +33,13 @@ for _, lsp in ipairs(servers) do
   })
 end
 
+nvim_lsp.java_language_server.setup({
+  cmd = { 'java-language-server' },
+  on_attach = on_attach,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+})
+
+
 nvim_lsp.pyright.setup({
   root_dir = nvim_lsp.util.root_pattern('.git', vim.fn.getcwd()),
   on_attach = on_attach,
