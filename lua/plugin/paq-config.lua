@@ -48,6 +48,7 @@ require('paq')({
 
   --  Convenience
   'kyazdani42/nvim-tree.lua';
+  'stevearc/aerial.nvim';
   'folke/which-key.nvim';
   'phaazon/hop.nvim';
   'lewis6991/gitsigns.nvim';

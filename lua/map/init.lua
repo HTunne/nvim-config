@@ -27,6 +27,7 @@ wk.register({
 -- leader mappings
 wk.register({
   ['<space>'] = require('map.hop'),
+  a = { '<cmd>AerialToggle<cr>', 'open aerial' },
   c = { '<cmd>noh<CR>', 'clear highlights' },
   d = require('map.dap'),
   e = { '<cmd>NvimTreeToggle<CR>', 'open nvim tree' },

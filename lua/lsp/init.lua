@@ -26,6 +26,7 @@ local on_attach = function(client, bufnr)
       false
     )
   end
+  require('aerial').on_attach(client, bufnr)
 end
 
 -- Use a loop to conveniently both setup defined servers

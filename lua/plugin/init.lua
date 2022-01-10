@@ -35,7 +35,13 @@ require('plugin.telescope-config')
 require('plugin.neorg-config')
 require('plugin.null-ls')
 require('onedark').setup({})
+require('aerial').setup({
+  backends = { 'lsp', 'treesitter' },
+})
 require('lualine').setup({
+  sections = {
+    lualine_x = { 'aerial' },
+  },
   options = {
     theme = 'onedark',
     section_separators = '',
