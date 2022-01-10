@@ -16,6 +16,7 @@ local lldb = require('dbg/configurations/lldb')
 dap.configurations.c = lldb
 dap.configurations.cpp = lldb
 dap.configurations.rust = lldb
+dap.configurations.python = require('dbg/configurations/flask')
 
 -- python
 require('dap-python').setup('/home/h/.local/share/virtualenvs/task-rest-SL2EhAL0/bin/python')
