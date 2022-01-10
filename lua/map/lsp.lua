@@ -23,11 +23,13 @@ return {
         name = '+workspace',
         a = { vim.lsp.buf.add_workspace_folder, 'add folder' },
         l = {
-          function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-          'list folders'
+          function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+          end,
+          'list folders',
         },
-        r = { vim.lsp.buf.remove_workspace_folder, 'remove folder' }
-      }
-    }
-  }
+        r = { vim.lsp.buf.remove_workspace_folder, 'remove folder' },
+      },
+    },
+  },
 }

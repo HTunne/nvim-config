@@ -7,5 +7,5 @@ return {
   b = 'blame line',
   R = 'reset buffer',
   S = 'stage buffer',
-  U = 'reset buffer index'
+  U = 'reset buffer index',
 }

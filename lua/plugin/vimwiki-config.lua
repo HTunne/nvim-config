@@ -9,12 +9,11 @@ vim.g.vimwiki_list = {
   {
     path = '~/notes/',
     syntax = 'markdown',
-    ext = '.md'
+    ext = '.md',
   },
   {
     path = '~/work/notes/',
     syntax = 'markdown',
-    ext = '.md'
-  }
+    ext = '.md',
+  },
 }
-

@@ -2,10 +2,10 @@ return {
   name = '+buffers',
   ['<A-h>'] = { '<cmd>BufferPrevious<cr>', 'goto previous buffer' },
   ['<A-l>'] = { '<cmd>BufferNext<cr>', 'got next buffer' },
--- Re-order to previous/next
+  -- Re-order to previous/next
   ['<A-H>'] = { '<cmd>BufferMovePrevious<cr>', 'move buffer left' },
   ['<A-L>'] = { '<cmd>BufferMoveNext<cr>', 'move buffer right' },
--- Goto buffer in position...
+  -- Goto buffer in position...
   ['<A-1>'] = { '<cmd>BufferGoto 1<cr>', 'goto buffer 1' },
   ['<A-2>'] = { '<cmd>BufferGoto 2<cr>', 'goto buffer 2' },
   ['<A-3>'] = { '<cmd>BufferGoto 3<cr>', 'goto buffer 3' },
@@ -16,23 +16,23 @@ return {
   ['<A-8>'] = { '<cmd>BufferGoto 8<cr>', 'goto buffer 8' },
   ['<A-9>'] = { '<cmd>BufferGoto 9<cr>', 'goto buffer 9' },
   ['<A-0>'] = { '<cmd>BufferLast<cr>', 'goto last buffer' },
--- Close buffer
+  -- Close buffer
   ['<A-q>'] = { '<cmd>BufferClose<cr>', 'close buffer' },
--- Wipeout buffer
+  -- Wipeout buffer
   ['<A-w>'] = { '<cmd>BufferWipeout<cr>', 'buffer wipeout' },
--- Close commands
+  -- Close commands
   ['<A-f>'] = { '<cmd>BufferCloseAllButCurrent<cr>', 'close all but current buffer' },
   ['<A->>'] = { '<cmd>BufferCloseBuffersLeft<cr>', 'close buffers left' },
   ['<A-<>'] = { '<cmd>BufferCloseBuffersRight<cr>', 'close buffers right' },
--- Magic buffer-picking mode
+  -- Magic buffer-picking mode
   ['<A-p>'] = { '<cmd>BufferPick<cr>', 'pick buffer' },
--- Sort automatically by...
+  -- Sort automatically by...
   ['<leader>'] = {
     ['b'] = {
       name = '+buffers',
       ['b'] = { '<cmd>BufferOrderByBufferNumber<cr>', 'sort buffers by number' },
       ['d'] = { '<cmd>BufferOrderByDirectory<cr>', 'sort buffers by dir' },
       ['l'] = { '<cmd>BufferOrderByLanguage<cr>', 'sort buffers by language' },
-    }
-  }
+    },
+  },
 }

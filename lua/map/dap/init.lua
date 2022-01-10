@@ -18,22 +18,28 @@ return {
   s = {
     name = '+set breakpoint',
     r = {
-      function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-      'set conditional breakpoint'
+      function()
+        dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+      end,
+      'set conditional breakpoint',
     },
     m = {
-      function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,
-      'set breakpoint with log message'
-    }
+      function()
+        dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+      end,
+      'set breakpoint with log message',
+    },
   },
 
   w = {
     name = '+widgets',
     h = { widgets.hover, 'widgets hover' },
     s = {
-      function() widgets.centered_float(widgets.scopes) end,
-      'widgets scopes'
-    }
+      function()
+        widgets.centered_float(widgets.scopes)
+      end,
+      'widgets scopes',
+    },
   },
 
   n = require('map/dap/osv'),

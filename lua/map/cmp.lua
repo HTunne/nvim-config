@@ -6,6 +6,6 @@ return {
   ['<C-e>'] = 'close completion menu',
   ['<C-Space>'] = 'invoke completion',
   ['<CR>'] = 'confirm selection',
-  ["<Tab>"] = 'Tab complete',
-  ["<S-Tab>"] = 'Shift Tab complete',
+  ['<Tab>'] = 'Tab complete',
+  ['<S-Tab>'] = 'Shift Tab complete',
 }
