@@ -5,8 +5,8 @@ require('paq')({
 
   -- Aesthetic
   'monsonjeremy/onedark.nvim';
-  'hoob3rt/lualine.nvim';
-  'romgrk/barbar.nvim';
+  'hoob3rt/lualine.nvim'; -- 'kyazdani42/nvim-web-devicons'
+  'romgrk/barbar.nvim'; -- 'kyazdani42/nvim-web-devicons'
   'norcalli/nvim-colorizer.lua';
   'kyazdani42/nvim-web-devicons';
   'lukas-reineke/indent-blankline.nvim';
@@ -16,8 +16,8 @@ require('paq')({
   'chentau/marks.nvim';
 
   -- lsp
-  'neovim/nvim-lspconfig';
-  'jose-elias-alvarez/null-ls.nvim';
+  'neovim/nvim-lspconfig'; -- rust_analyzer, vuels, ccls, texlab, tsserver, null-ls, java_language_server, pyright, sumneko_lua
+  'jose-elias-alvarez/null-ls.nvim'; -- sytlua, black, prettier, ccpcheck
 
   -- Treesitter
   'nvim-treesitter/nvim-treesitter';
@@ -70,5 +70,5 @@ require('paq')({
 
   'jupyter-vim/jupyter-vim';
 
-  'vhyrro/neorg';
+  -- 'vhyrro/neorg';
 })
