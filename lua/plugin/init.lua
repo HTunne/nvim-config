@@ -32,8 +32,10 @@ require('plugin.nvim-cmp-config')
 require('plugin.luasnip-config')
 require('plugin.vimwiki-config')
 require('plugin.telescope-config')
-require('plugin.neorg-config')
-require('plugin.null-ls')
+-- require('plugin.neorg-config')
+require('plugin.marks-config')
+require('plugin.gitsigns-config')
+require('plugin.null-ls-config')
 require('onedark').setup({})
 require('aerial').setup({
   backends = { 'lsp', 'treesitter' },
