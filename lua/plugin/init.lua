@@ -58,7 +58,6 @@ require('trouble').setup()
 require('Comment').setup()
 require('which-key').setup({ plugins = { spelling = { enabled = true } } })
 require('hop').setup()
--- vim.g.UltiSnipsRemoveSelectModeMappings = 0
 require('nvim-dap-virtual-text').setup()
 require('nvim-biscuits').setup({
   toggle_keybind = "<leader>b",
