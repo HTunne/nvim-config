@@ -50,6 +50,8 @@ require('lualine').setup({
     component_separators = '',
   },
 })
+
+require('twilight').setup()
 require('colorizer').setup()
 require('gitsigns').setup()
 require('trouble').setup()
@@ -58,3 +60,16 @@ require('which-key').setup({ plugins = { spelling = { enabled = true } } })
 require('hop').setup()
 -- vim.g.UltiSnipsRemoveSelectModeMappings = 0
 require('nvim-dap-virtual-text').setup()
+require('nvim-biscuits').setup({
+  toggle_keybind = "<leader>b",
+  show_on_start = false -- defaults to false
+})
+
+vim.api.nvim_exec(
+[[
+augroup twilight
+  autocmd!
+  autocmd InsertEnter * TwilightEnable
+  autocmd InsertLeave * TwilightDisable
+augroup END
+]], false)

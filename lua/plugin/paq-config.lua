@@ -9,8 +9,11 @@ require('paq')({
   'romgrk/barbar.nvim';
   'norcalli/nvim-colorizer.lua';
   'kyazdani42/nvim-web-devicons';
+  'lukas-reineke/indent-blankline.nvim';
   'folke/zen-mode.nvim';
-  'folke/trouble.nvim';
+  'folke/twilight.nvim';
+  'folke/trouble.nvim'; -- 'kyazdani42/nvim-web-devicons'
+  'chentau/marks.nvim';
 
   -- lsp
   'neovim/nvim-lspconfig';
@@ -19,6 +22,7 @@ require('paq')({
   -- Treesitter
   'nvim-treesitter/nvim-treesitter';
   'nvim-treesitter/playground';
+  'code-biscuits/nvim-biscuits'; -- 'nvim-treesitter/nvim-treesitter'
 
   -- Completion
   'hrsh7th/cmp-buffer';
