@@ -41,7 +41,6 @@ wk.register({
     end,
     'toggle foldcolumn',
   },
-  h = require('map.gitsigns'),
   j = { ':m .+1<cr>==', 'move line down' },
   k = { ':m .-2<cr>==', 'move line up' },
   o = { 'm`o<Esc>0D``', 'newline below' },
@@ -56,3 +55,4 @@ wk.register({
 wk.register(require('map.lsp'))
 wk.register(require('map.cmp'))
 wk.register(require('map.barbar'))
+wk.register(require('map.gitsigns'))
