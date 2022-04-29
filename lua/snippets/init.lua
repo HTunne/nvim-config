@@ -18,14 +18,31 @@ local fmta = require('luasnip.extras.fmt').fmta
 local types = require('luasnip.util.types')
 local conds = require('luasnip.extras.expand_conditions')
 
--- Make sure to not pass an invalid command, as io.popen() may write over nvim-text.
-local function bash(_, _, command)
-  local file = io.popen(command, 'r')
-  local res = {}
-  for line in file:lines() do
-    table.insert(res, line)
+
+local function random_string(charset, length)
+  local res = ""
+  for _ = 1, length
+  do
+    res = res .. charset[math.random(1, #charset)]
   end
   return res
+end
+
+local function pass(_, _)
+  local charset = {}
+  for i = 33, 126 do table.insert(charset, string.char(i)) end
+
+  return random_string(charset, 32)
+end
+
+local function passn(_, _)
+  local charset = {}
+  -- qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890
+  for i = 48,  57 do table.insert(charset, string.char(i)) end
+  for i = 65,  90 do table.insert(charset, string.char(i)) end
+  for i = 97, 122 do table.insert(charset, string.char(i)) end
+
+  return random_string(charset, 32)
 end
 
 ls.snippets = {
@@ -53,14 +70,14 @@ ls.snippets = {
       end, {}),
     }),
     s('pass', {
-      f(bash, {}, '< /dev/urandom tr -dc [:graph:] | head -c 32'),
+      f(pass, {}),
       t({ '', 'user: ' }),
       i(1),
       t({ '', 'url: ' }),
       i(2),
     }),
     s('passn', {
-      f(bash, {}, '< /dev/urandom tr -dc [:alnum:] | head -c 32'),
+      f(passn, {}),
       t({ '', 'user: ' }),
       i(1),
       t({ '', 'url: ' }),
