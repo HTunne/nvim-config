@@ -56,6 +56,7 @@ require('paq')({
   'folke/which-key.nvim';
   'phaazon/hop.nvim';
   'lewis6991/gitsigns.nvim';
+  'akinsho/git-conflict.nvim';
   'numToStr/Comment.nvim';
   'tpope/vim-surround';
   'tpope/vim-repeat';

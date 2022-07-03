@@ -54,6 +54,7 @@ require('lualine').setup({
 require('twilight').setup()
 require('colorizer').setup()
 require('gitsigns').setup()
+require('git-conflict').setup()
 require('trouble').setup()
 require('Comment').setup()
 require('which-key').setup({ plugins = { spelling = { enabled = true } } })
