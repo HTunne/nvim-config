@@ -1,6 +1,6 @@
 return {
-  [']c'] = { '<cmd>Gitsigns next_hunk<CR>' },
-  ['[c'] = { '<cmd>Gitsigns prev_hunk<CR>' },
+  [']c'] = { '<cmd>Gitsigns next_hunk<CR>', 'next hunk' },
+  ['[c'] = { '<cmd>Gitsigns prev_hunk<CR>', 'prev hunk' },
   ['<leader>'] = {
     ['h'] = {
       name = '+gitsigns',
