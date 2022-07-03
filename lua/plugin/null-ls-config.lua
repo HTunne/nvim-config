@@ -12,7 +12,9 @@ require('null-ls').setup({
     formatting.stylua,
     formatting.black,
     formatting.prettier,
+    formatting.qmlformat,
     diagnostics.cppcheck,
+    diagnostics.qmllint,
     code_actions.gitsigns,
   },
 })
