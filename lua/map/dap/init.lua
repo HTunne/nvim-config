@@ -9,6 +9,8 @@ return {
   o = { dap.step_out, 'step out' },
   v = { dap.step_over, 'step over' },
 
+  u = { require('dapui').toggle, 'toggle dap ui'},
+
   r = {
     name = '+repl',
     o = { dap.repl.open, 'repl open' },
