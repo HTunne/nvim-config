@@ -13,7 +13,7 @@ require('paq')({
   'folke/zen-mode.nvim';
   'folke/twilight.nvim';
   'folke/trouble.nvim'; -- 'kyazdani42/nvim-web-devicons'
-  'chentau/marks.nvim';
+  'chentoast/marks.nvim';
 
   -- lsp
   'neovim/nvim-lspconfig'; -- rust_analyzer, vuels, ccls, texlab, tsserver, null-ls, java_language_server, pyright, sumneko_lua
