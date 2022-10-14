@@ -13,7 +13,7 @@ require('null-ls').setup({
     formatting.black,
     formatting.prettier,
     formatting.qmlformat,
-    diagnostics.cppcheck,
+    -- diagnostics.cppcheck,
     diagnostics.qmllint,
     code_actions.gitsigns,
   },
