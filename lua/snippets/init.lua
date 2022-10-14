@@ -18,11 +18,9 @@ local fmta = require('luasnip.extras.fmt').fmta
 local types = require('luasnip.util.types')
 local conds = require('luasnip.extras.expand_conditions')
 
-
 local function random_string(charset, length)
-  local res = ""
-  for _ = 1, length
-  do
+  local res = ''
+  for _ = 1, length do
     res = res .. charset[math.random(1, #charset)]
   end
   return res
@@ -30,7 +28,9 @@ end
 
 local function pass(_, _)
   local charset = {}
-  for i = 33, 126 do table.insert(charset, string.char(i)) end
+  for i = 33, 126 do
+    table.insert(charset, string.char(i))
+  end
 
   return random_string(charset, 32)
 end
@@ -38,9 +38,15 @@ end
 local function passn(_, _)
   local charset = {}
   -- qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890
-  for i = 48,  57 do table.insert(charset, string.char(i)) end
-  for i = 65,  90 do table.insert(charset, string.char(i)) end
-  for i = 97, 122 do table.insert(charset, string.char(i)) end
+  for i = 48, 57 do
+    table.insert(charset, string.char(i))
+  end
+  for i = 65, 90 do
+    table.insert(charset, string.char(i))
+  end
+  for i = 97, 122 do
+    table.insert(charset, string.char(i))
+  end
 
   return random_string(charset, 32)
 end
