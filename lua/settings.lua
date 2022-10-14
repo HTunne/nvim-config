@@ -15,10 +15,12 @@ local indent = 2
 opt('w', 'number', true) -- Print line number
 opt('w', 'relativenumber', true) -- Relative line numbers
 opt('w', 'list', true) -- Show some invisible characters (tabs...)
+opt('w', 'spell', true)
+opt('b', 'spelllang', 'en_gb')
 opt('b', 'expandtab', true) -- Use spaces instead of tabs
 opt('b', 'tabstop', indent) -- Number of spaces tabs count for
 opt('b', 'shiftwidth', indent) -- Size of an indent
-opt('b', 'smartindent', true) -- Insert indents automatically
+-- opt('b', 'smartindent', true) -- Insert indents automatically
 opt('o', 'background', 'dark')
 opt('o', 'completeopt', 'menu,menuone,noselect') -- Completion options.
 opt('o', 'hidden', true) -- Enable modified buffers in background
