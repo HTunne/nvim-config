@@ -21,7 +21,9 @@ require('paq')({
 
   -- Treesitter
   'nvim-treesitter/nvim-treesitter';
-  'nvim-treesitter/playground';
+  'nvim-treesitter/nvim-treesitter-context';
+  'nvim-treesitter/playground'; --'nvim-treesitter/nvim-treesitter'
+  'lewis6991/spellsitter.nvim'; --'nvim-treesitter/nvim-treesitter'
   'code-biscuits/nvim-biscuits'; -- 'nvim-treesitter/nvim-treesitter'
 
   -- Completion

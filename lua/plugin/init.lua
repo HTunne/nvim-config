@@ -51,6 +51,8 @@ require('lualine').setup({
   },
 })
 
+require('treesitter-context').setup({separator = '-'})
+require('spellsitter').setup()
 require('twilight').setup()
 require('colorizer').setup()
 require('gitsigns').setup()
