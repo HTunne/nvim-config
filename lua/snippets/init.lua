@@ -45,44 +45,35 @@ local function passn(_, _)
   return random_string(charset, 32)
 end
 
-ls.snippets = {
-  -- When trying to expand a snippet, luasnip first searches the tables for
-  -- each filetype specified in 'filetype' followed by 'all'.
-  -- If ie. the filetype is 'lua.c'
-  --     - luasnip.lua
-  --     - luasnip.c
-  --     - luasnip.all
-  -- are searched in that order.
-  all = {
-    s('datetime', {
-      f(function(_, _)
-        return os.date()
-      end, {}),
-    }),
-    s('date', {
-      f(function(_, _)
-        return os.date('%Y-%m-%d')
-      end, {}),
-    }),
-    s('time', {
-      f(function(_, _)
-        return os.date('%H:%M:%S')
-      end, {}),
-    }),
-    s('pass', {
-      f(pass, {}),
-      t({ '', 'user: ' }),
-      i(1),
-      t({ '', 'url: ' }),
-      i(2),
-    }),
-    s('passn', {
-      f(passn, {}),
-      t({ '', 'user: ' }),
-      i(1),
-      t({ '', 'url: ' }),
-      i(2),
-    }),
-  },
-}
+ls.add_snippets('all', {
+  s('datetime', {
+    f(function(_, _)
+      return os.date()
+    end, {}),
+  }),
+  s('date', {
+    f(function(_, _)
+      return os.date('%Y-%m-%d')
+    end, {}),
+  }),
+  s('time', {
+    f(function(_, _)
+      return os.date('%H:%M:%S')
+    end, {}),
+  }),
+  s('pass', {
+    f(pass, {}),
+    t({ '', 'user: ' }),
+    i(1),
+    t({ '', 'url: ' }),
+    i(2),
+  }),
+  s('passn', {
+    f(passn, {}),
+    t({ '', 'user: ' }),
+    i(1),
+    t({ '', 'url: ' }),
+    i(2),
+  }),
+})
 require('luasnip/loaders/from_vscode').lazy_load()
