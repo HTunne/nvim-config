@@ -19,7 +19,7 @@ return {
     function()
       hop.hint_char1({ direction = dir.AFTER_CURSOR })
     end,
-    'hop char backward',
+    'hop char forward',
   },
   F = {
     function()
@@ -38,5 +38,17 @@ return {
       hop.hint_lines_skip_whitespace({ direction = dir.BEFORE_CURSOR })
     end,
     'hop line up',
+  },
+  n = {
+    function()
+      hop.hint_patterns()
+    end,
+    'hop search',
+  },
+  N = {
+    function()
+      hop.hint_patterns({ direction = dir.BEFORE_CURSOR })
+    end,
+    'hop search backward',
   },
 }
