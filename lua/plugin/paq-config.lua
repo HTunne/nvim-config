@@ -17,7 +17,7 @@ require('paq')({
 
   -- lsp
   'neovim/nvim-lspconfig'; -- rust_analyzer, vuels, ccls, texlab, tsserver, null-ls, java_language_server, pyright, sumneko_lua
-  'jose-elias-alvarez/null-ls.nvim'; -- sytlua, black, prettier, ccpcheck
+  'jose-elias-alvarez/null-ls.nvim'; -- sytlua, black, prettier, ccpcheck, qmllint, qmlformat
 
   -- Treesitter
   'nvim-treesitter/nvim-treesitter';
