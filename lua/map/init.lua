@@ -45,7 +45,7 @@ wk.register({
   k = { ':m .-2<cr>==', 'move line up' },
   o = { 'm`o<Esc>0D``', 'newline below' },
   p = require('map.telescope'),
-  s = { '<cmd>set spell spelllang=en_gb<CR>', 'set spell' },
+  s = { '<cmd>set spell!<CR>', 'set spell' },
   t = { '<cmd>Trouble<CR>', 'trouble' },
   w = require('map.vimwiki'),
   y = require('map.jupyter'),
