@@ -43,6 +43,8 @@ require('paq')({
   'nvim-lua/plenary.nvim';
   'nvim-telescope/telescope.nvim';
   'nvim-telescope/telescope-fzy-native.nvim';
+  'axkirillov/easypick.nvim';
+  -- 'AckslD/nvim-neoclip.lua';
 
   -- Snippets
   'L3MON4D3/LuaSnip';
