@@ -16,6 +16,7 @@ opt('w', 'number', true) -- Print line number
 opt('w', 'relativenumber', true) -- Relative line numbers
 opt('w', 'list', true) -- Show some invisible characters (tabs...)
 opt('w', 'spell', true)
+--opt('w', 'signcolumn', true)
 opt('b', 'spelllang', 'en_gb')
 opt('b', 'expandtab', true) -- Use spaces instead of tabs
 opt('b', 'tabstop', indent) -- Number of spaces tabs count for
