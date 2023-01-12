@@ -11,7 +11,12 @@ return {
     l = {
       name = '+lsp',
       D = { vim.lsp.buf.type_definition, 'jump to type definition' },
-      f = { vim.lsp.buf.formatting, 'format current buffer' },
+      f = {
+        function()
+          vim.lsp.buf.format({ async = true })
+        end,
+        'format current buffer',
+      },
       h = { vim.lsp.buf.document_highlight, 'highlight' },
       K = { vim.lsp.buf.hover, 'display hover info' },
       r = { vim.lsp.buf.rename, 'rename all references' },
