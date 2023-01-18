@@ -52,6 +52,28 @@ local function passn(_, _)
 end
 
 ls.add_snippets('all', {
+  s('cz', {
+    c(1, {
+      t('feat'),
+      t('fix'),
+      t('docs'),
+      t('style'),
+      t('refactor'),
+      t('perf'),
+      t('test'),
+      t('chore'),
+      t('revert'),
+      t('WIP'),
+    }),
+    t('('),
+    i(2, 'Scope'),
+    t('): '),
+    i(3, 'Subject. Consise description on the changes. Imperative, lower case and no final dot'),
+    t({ '', '', '' }),
+    i(4),
+    t({ '', '', '' }),
+    i(5),
+  }),
   s('datetime', {
     f(function(_, _)
       return os.date()
