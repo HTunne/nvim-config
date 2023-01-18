@@ -60,6 +60,8 @@ require('paq')({
   'stevearc/aerial.nvim';
   'folke/which-key.nvim';
   'phaazon/hop.nvim';
+  'tpope/vim-fugitive';
+  'wcascades/vim-fugitive-toggle';
   'lewis6991/gitsigns.nvim';
   'akinsho/git-conflict.nvim';
   'numToStr/Comment.nvim';

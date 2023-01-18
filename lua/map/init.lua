@@ -41,6 +41,7 @@ wk.register({
     end,
     'toggle foldcolumn',
   },
+  g = { [[<cmd>lua require('vim-fugitive-toggle').toggle()<cr>]], 'toggle Git' },
   j = { ':m .+1<cr>==', 'move line down' },
   k = { ':m .-2<cr>==', 'move line up' },
   o = { 'm`o<Esc>0D``', 'newline below' },
