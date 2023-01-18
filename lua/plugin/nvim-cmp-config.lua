@@ -20,6 +20,7 @@ cmp.setup({
     { name = 'treesitter' },
     { name = 'luasnip' },
     { name = 'spell' },
+    { name = 'luasnip_choice' },
   },
   snippet = {
     expand = function(args)
@@ -49,7 +50,7 @@ cmp.setup({
   window = {
     documentation = {
       border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
-    }
+    },
   },
   mapping = {
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -82,4 +83,8 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   },
+})
+
+require('cmp_luasnip_choice').setup({
+  auto_open = true, -- Automatically open nvim-cmp on choice node (default: true)
 })
