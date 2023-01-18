@@ -38,7 +38,8 @@ require('plugin.easypick-config')
 require('plugin.marks-config')
 require('plugin.gitsigns-config')
 require('plugin.null-ls-config')
-require('onedark').setup({})
+require('fidget').setup({})
+-- require('onedark').setup({})
 require('aerial').setup({
   backends = { 'lsp', 'treesitter' },
 })
