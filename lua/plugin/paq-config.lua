@@ -4,6 +4,7 @@ require('paq')({
   'savq/paq-nvim'; -- paq-nvim manages itself
 
   -- Aesthetic
+  'catppuccin/nvim';
   'monsonjeremy/onedark.nvim';
   'hoob3rt/lualine.nvim'; -- 'kyazdani42/nvim-web-devicons'
   'romgrk/barbar.nvim'; -- 'kyazdani42/nvim-web-devicons'
