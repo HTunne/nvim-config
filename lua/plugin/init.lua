@@ -6,9 +6,10 @@
 local fn = vim.fn
 
 local install_path = fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
-local install_required = false
+local is_bootstrap = false
 
 if fn.empty(fn.glob(install_path)) > 0 then
+  is_bootstrap = true
   fn.system({
     'git',
     'clone',
@@ -16,12 +17,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
     'https://github.com/savq/paq-nvim.git',
     install_path,
   })
-  install_required = true
+  vim.cmd([[packadd packer.nvim]])
 end
 
 require('plugin.paq-config')
 
-if install_required then
+if is_bootstrap then
   vim.api.nvim_command('PaqInstall')
 end
 
