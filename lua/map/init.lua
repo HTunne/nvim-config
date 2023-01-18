@@ -48,7 +48,8 @@ wk.register({
   p = require('map.telescope'),
   s = { '<cmd>set spell!<CR>', 'set spell' },
   t = { '<cmd>Trouble<CR>', 'trouble' },
-  w = require('map.vimwiki'),
+  w = { '<C-w>', '+window' },
+  v = require('map.vimwiki'),
   y = require('map.jupyter'),
   z = { require('zen-mode').toggle, 'zen mode' },
 }, { prefix = '<leader>' })
