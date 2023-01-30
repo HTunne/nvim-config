@@ -1,2 +1,2 @@
 # neovim config files
-requires neovim 0.5
+requires neovim 0.8
