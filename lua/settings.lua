@@ -36,6 +36,7 @@ opt('o', 'termguicolors', true) -- True color support
 opt('o', 'wildmode', 'list:longest') -- Command-line completion mode
 opt('o', 'laststatus', 2)
 opt('o', 'showmode', false)
+opt('o', 'exrc', true)
 
 vim.g.mapleader = ' '
 vim.g.tex_flavor = 'latex'
