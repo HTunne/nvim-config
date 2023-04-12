@@ -38,6 +38,9 @@ opt('o', 'laststatus', 2)
 opt('o', 'showmode', false)
 opt('o', 'exrc', true)
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g.mapleader = ' '
 vim.g.tex_flavor = 'latex'
 vim.g.bufferline = { auto_hide = true }
