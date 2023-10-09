@@ -5,7 +5,7 @@ return {
     'neovim/nvim-lspconfig',
   },
   keys = {
-    { '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'open aerial' },
+    { '<leader>a', '<cmd>AerialToggle<CR>', desc = 'open aerial' },
     {
       '<leader>pa',
       function()
@@ -18,6 +18,8 @@ return {
   opts = {
     backends = { 'lsp', 'treesitter' },
     filter_kind = false,
+    default_direction = 'prefer_left',
+    close_on_select = true,
   },
   config = function(_, opts)
     local aerial = require('aerial')
