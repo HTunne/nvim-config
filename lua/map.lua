@@ -3,7 +3,6 @@
 -----------
 --
 -- normal mode mappings
-vim.keymap.set('n', '<leader>s', '<cmd>set spell!<CR>', { desc = 'set spell' })
 vim.keymap.set('n', 'Y', 'y$', { desc = 'yank to end of line' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'centre after n' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'centre after N' })
