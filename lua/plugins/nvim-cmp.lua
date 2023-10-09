@@ -28,15 +28,16 @@ function M.config()
 
   cmp.setup({
     sources = {
-      { name = 'buffer' },
-      { name = 'path' },
       { name = 'nvim_lsp' },
       { name = 'nvim_lua' },
-      { name = 'calc' },
       { name = 'treesitter' },
       { name = 'luasnip' },
-      { name = 'spell' },
       { name = 'luasnip_choice' },
+      { name = 'neorg' },
+      { name = 'spell' },
+      { name = 'calc' },
+      { name = 'buffer' },
+      { name = 'path' },
     },
     snippet = {
       expand = function(args)
