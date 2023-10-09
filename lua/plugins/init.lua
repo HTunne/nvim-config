@@ -5,6 +5,7 @@ return {
   'milisims/nvim-luaref',
   'tpope/vim-surround',
   'tpope/vim-repeat',
+  'neomake/neomake',
   'lukas-reineke/indent-blankline.nvim',
   { 'norcalli/nvim-colorizer.lua', config = true },
   { 'akinsho/git-conflict.nvim', config = true, cond = require('util').is_git_repo },
