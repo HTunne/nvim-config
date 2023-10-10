@@ -98,11 +98,6 @@ return {
     dependancies = { 'nvim-treesitter/nvim-treesitter' },
   },
   {
-    'lewis6991/spellsitter.nvim',
-    dependancies = { 'nvim-treesitter/nvim-treesitter' },
-    config = true,
-  },
-  {
     'nvim-treesitter/nvim-treesitter-textobjects',
     dependancies = { 'nvim-treesitter/nvim-treesitter' },
   },
