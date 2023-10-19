@@ -6,9 +6,8 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
 parser_config.openscad = {
   install_info = {
-    url = "https://github.com/bollian/tree-sitter-openscad.git",
+    url = "https://github.com/bollian/tree-sitter-openscad",
     files = { "src/parser.c" },
-    branch = "main",
     generate_requires_npm = false,
     requires_generate_from_grammar = false,
   },
