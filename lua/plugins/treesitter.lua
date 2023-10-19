@@ -1,9 +1,19 @@
 ------------------
 --  treesitter  --
 ------------------
---
--- local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
---
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+
+parser_config.openscad = {
+  install_info = {
+    url = "https://github.com/bollian/tree-sitter-openscad.git",
+    files = { "src/parser.c" },
+    branch = "main",
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+}
+
 -- parser_configs.norg = {
 --   install_info = {
 --     url = 'https://github.com/vhyrro/tree-sitter-norg',

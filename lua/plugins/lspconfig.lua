@@ -1,7 +1,7 @@
 return {
   {
     'neovim/nvim-lspconfig',
-    ft = { 'rust', 'c', 'cpp', 'tex', 'typescript', 'java', 'python', 'lua' },
+    ft = { 'rust', 'c', 'cpp', 'tex', 'typescript', 'java', 'python', 'lua', 'openscad' },
     dependencies = {
       'p00f/clangd_extensions.nvim',
       'hrsh7th/nvim-cmp',
@@ -34,6 +34,11 @@ return {
 
       lspconfig.pyright.setup({
         root_dir = lspconfig.util.root_pattern('.git', vim.fn.getcwd()),
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      })
+
+      lspconfig.openscad_lsp.setup({
+        cmd = { 'openscad-lsp', '--stdio', '--fmt-style', 'LLVM' },
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
       })
 
