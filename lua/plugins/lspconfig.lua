@@ -2,15 +2,30 @@ return {
   {
     'neovim/nvim-lspconfig',
     ft = { 'rust', 'c', 'cpp', 'tex', 'typescript', 'java', 'python', 'lua' },
+    dependencies = {
+      'p00f/clangd_extensions.nvim',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+    },
     config = function()
       local lspconfig = require('lspconfig')
 
-      local servers = { 'rust_analyzer', 'clangd', 'texlab', 'tsserver' }
+      local servers = { 'rust_analyzer', 'texlab', 'tsserver' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
           capabilities = require('cmp_nvim_lsp').default_capabilities(),
         })
       end
+
+      lspconfig.clangd.setup({
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        on_attach = function()
+          require('clangd_extensions.inlay_hints').setup_autocmd()
+          require('clangd_extensions.inlay_hints').set_inlay_hints()
+          vim.keymap.set('n', '<leader>ls', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch source/header' })
+          vim.keymap.set('n', '<leader>lt', ':ClangdTypeHierarchy<CR>', { desc = 'show type heirachy' })
+        end,
+      })
 
       lspconfig.java_language_server.setup({
         cmd = { 'java-language-server' },
@@ -36,7 +51,7 @@ return {
             workspace = {
               -- Make the server aware of Neovim runtime files
               library = vim.api.nvim_get_runtime_file('', true),
-              checkThirdParty = false
+              checkThirdParty = false,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
