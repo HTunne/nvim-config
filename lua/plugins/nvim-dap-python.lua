@@ -24,7 +24,7 @@ return {
       { desc = 'debug selection' },
     },
   },
-  dependancies = {
+  dependencies = {
     'mfussenegger/nvim-dap',
   },
   config = function()

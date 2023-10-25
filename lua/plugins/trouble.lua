@@ -4,7 +4,7 @@ return {
   keys = {
     { '<leader>t', '<cmd>Trouble<CR>', 'trouble' },
   },
-  dependancies = {
+  dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
 }

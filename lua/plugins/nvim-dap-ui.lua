@@ -1,6 +1,6 @@
 return {
   'rcarriga/nvim-dap-ui',
-  dependancies = {
+  dependencies = {
     'mfussenegger/nvim-dap',
   },
   event = 'User NvimDapLoaded',

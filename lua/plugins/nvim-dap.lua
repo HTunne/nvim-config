@@ -102,7 +102,7 @@ return {
     'theHamsta/nvim-dap-virtual-text',
     config = true,
     event = 'User NvimDapLoaded',
-    dependancies = {
+    dependencies = {
       'mfussenegger/nvim-dap',
       'nvim-treesitter/nvim-treesitter',
     },

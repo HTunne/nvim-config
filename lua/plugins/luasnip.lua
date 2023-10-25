@@ -122,7 +122,7 @@ return {
   {
     'rafamadriz/friendly-snippets',
     event = 'User LuasnipLoaded',
-    dependancies = {
+    dependencies = {
       'L3MON4D3/LuaSnip',
     },
   },

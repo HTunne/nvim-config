@@ -1,6 +1,6 @@
 return {
   'nvim-telescope/telescope-dap.nvim',
-  dependancies = {
+  dependencies = {
     'mfussenegger/nvim-dap',
     'nvim-telescope/telescope.nvim',
   },

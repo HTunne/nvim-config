@@ -1,6 +1,6 @@
 return {
   'stevearc/aerial.nvim',
-  dependancies = {
+  dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'neovim/nvim-lspconfig',
   },

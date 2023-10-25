@@ -24,7 +24,7 @@ return {
       { desc = 'stop dap server' },
     },
   },
-  dependancies = {
+  dependencies = {
     'mfussenegger/nvim-dap',
   },
   config = function()

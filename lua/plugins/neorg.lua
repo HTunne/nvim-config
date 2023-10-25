@@ -1,6 +1,10 @@
 return {
   'nvim-neorg/neorg',
-  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-neorg/neorg-telescope' },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-neorg/neorg-telescope',
+  },
   build = ':Neorg sync-parsers',
   opts = {
     -- configuration here

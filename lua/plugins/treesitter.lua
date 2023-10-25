@@ -98,16 +98,16 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
-    dependancies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = { separator = '-' },
   },
   {
     'nvim-treesitter/playground',
     cmd = 'TSPlaygroundToggle',
-    dependancies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    dependancies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 }

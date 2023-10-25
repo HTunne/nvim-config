@@ -1,6 +1,6 @@
 return {
   'hoob3rt/lualine.nvim',
-  dependancies = {
+  dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
