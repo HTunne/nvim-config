@@ -14,4 +14,12 @@ return {
       },
     },
   },
+  language_config = {
+    python = {
+      disabled = true,
+    },
+    help = {
+      disabled = true,
+    }
+  },
 }
