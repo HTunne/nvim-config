@@ -29,33 +29,24 @@ vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { desc = 'move highlighted region d
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'move highlighted region up' })
 
 -- quickfix
+--[[
 vim.keymap.set('n', '[q', ':cprev<CR>', { desc = 'go to previous quickfix item' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'go to next quickfix item' })
+
 vim.keymap.set('n', '<leader>q', function()
-  local win_number = vim.api.nvim_get_current_win()
-  local v = vim.wo[win_number]
-  local all_options = vim.api.nvim_get_all_options_info()
-  local result = ''
-  for key, val in pairs(all_options) do
-    if val.global_local == false and val.scope == 'win' then
-      result = result .. '\n' .. key .. '=' .. tostring(v[key] or '<not set>')
+  local wins = vim.api.nvim_list_wins()
+  for _, win in ipairs(wins) do
+    print(win)
+    local num = vim.api.nvim_win_get_buf(win)
+    print(num)
+    print(vim.api.nvim_win_get_buf(win))
+    print(vim.api.nvim_buf_get_option(num, "buftype"))
+    if vim.api.nvim_buf_get_option(num, "buftype") == "quickfix" then
+      vim.exec('cclose')
     end
   end
-  print(result)
 end, { desc = 'toggle quickfix window' })
-
---[[
-function! ToggleQuickFix()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
-        copen
-    else
-        cclose
-    endif
-endfunction
-]]
---
-
--- nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
+]]--
 
 -- diagnostic
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'go to previous diagnostic' })
