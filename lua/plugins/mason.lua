@@ -1,7 +1,9 @@
 return {
   {
     'williamboman/mason.nvim',
-    config = true,
+    lazy = false,
+    build = ':MasonUpdate', -- :MasonUpdate updates registry contents
+    opts = {},
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
