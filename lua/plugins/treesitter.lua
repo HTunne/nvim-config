@@ -2,12 +2,12 @@
 --  treesitter  --
 ------------------
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 
 parser_config.openscad = {
   install_info = {
-    url = "https://github.com/bollian/tree-sitter-openscad",
-    files = { "src/parser.c" },
+    url = 'https://github.com/bollian/tree-sitter-openscad',
+    files = { 'src/parser.c' },
     generate_requires_npm = false,
     requires_generate_from_grammar = false,
   },
@@ -56,6 +56,11 @@ return {
               ['if'] = '@function.inner',
               ['ac'] = '@class.outer',
               ['ic'] = '@class.inner',
+              ['ai'] = '@conditional.outer',
+              ['ii'] = '@conditional.inner',
+              ['al'] = '@loop.outer',
+              ['il'] = '@loop.inner',
+              ['at'] = '@comment.outer',
             },
             selection_modes = {
               ['@parameter.outer'] = 'v', -- charwise
