@@ -6,20 +6,9 @@ return {
   opts = {
     on_events = { 'InsertLeave', 'CursorHoldI' },
     language_config = {
-      python = {
-        disabled = true,
-      },
-      help = {
+      vimdoc = {
         disabled = true,
       },
     },
-  },
-  language_config = {
-    python = {
-      disabled = true,
-    },
-    help = {
-      disabled = true,
-    }
   },
 }
