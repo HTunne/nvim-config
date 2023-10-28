@@ -71,7 +71,7 @@ return {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
       })
 
-      lspconfig.pyright.setup({
+      lspconfig.pylsp.setup({
         root_dir = lspconfig.util.root_pattern('.git', vim.fn.getcwd()),
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
       })
