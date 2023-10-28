@@ -1,5 +1,6 @@
 return {
   'jose-elias-alvarez/null-ls.nvim', -- sytlua, black, prettier, ccpcheck, qmllint, qmlformat
+  enabled = false,
   ft = {
     'lua',
     'python',
