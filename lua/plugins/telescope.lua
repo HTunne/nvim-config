@@ -40,7 +40,4 @@ return {
     })
     telescope.load_extension('fzf')
   end,
-  config = function()
-    local telescope = require('telescope')
-  end,
 }
