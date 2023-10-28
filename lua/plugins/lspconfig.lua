@@ -51,6 +51,9 @@ return {
             runtime = {
               version = 'LuaJIT',
             },
+            format = {
+              enable = false,
+            },
             diagnostics = {
               globals = { 'vim' },
             },
