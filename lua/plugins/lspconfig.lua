@@ -35,8 +35,8 @@ return {
         on_attach = function()
           require('clangd_extensions.inlay_hints').setup_autocmd()
           require('clangd_extensions.inlay_hints').set_inlay_hints()
-          vim.keymap.set('n', '<leader>ls', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch source/header' })
-          vim.keymap.set('n', '<leader>lt', ':ClangdTypeHierarchy<CR>', { desc = 'show type heirachy' })
+          vim.keymap.set('n', '<leader>ls', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'switch source/header' })
+          vim.keymap.set('n', '<leader>lt', '<cmd>ClangdTypeHierarchy<cr>', { desc = 'show type heirachy' })
         end,
       })
 
