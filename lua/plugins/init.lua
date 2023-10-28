@@ -2,6 +2,7 @@
 --                              plugin                                --
 ------------------------------------------------------------------------
 return {
+  { 'folke/neodev.nvim', opts = {} },
   'milisims/nvim-luaref',
   'tpope/vim-surround',
   'tpope/vim-repeat',
