@@ -29,7 +29,6 @@ vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { desc = 'move highlighted region d
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'move highlighted region up' })
 
 -- quickfix
---[[
 vim.keymap.set('n', '[q', ':cprev<CR>', { desc = 'go to previous quickfix item' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'go to next quickfix item' })
 
@@ -46,7 +45,6 @@ vim.keymap.set('n', '<leader>q', function()
     end
   end
 end, { desc = 'toggle quickfix window' })
-]]--
 
 -- diagnostic
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'go to previous diagnostic' })
