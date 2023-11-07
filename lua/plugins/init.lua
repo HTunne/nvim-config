@@ -4,7 +4,7 @@
 return {
   { 'folke/neodev.nvim', opts = {} },
   'milisims/nvim-luaref',
-  'tpope/vim-surround',
+  'kylechui/nvim-surround',
   'tpope/vim-repeat',
   'neomake/neomake',
   'lukas-reineke/indent-blankline.nvim',
