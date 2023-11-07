@@ -19,6 +19,14 @@ return {
       h = { name = '+gitsigns' },
       i = { name = '+diagnostic' },
       l = { name = '+lsp' },
+      n = {
+        name = '+neorg',
+        i = { name = '+insert' },
+        j = { name = '+journal' },
+        l = { name = '+list' },
+        m = { name = '+mode' },
+        t = { name = '+todo' },
+      },
       p = {
         name = '+telescope',
         d = { name = '+telescope-dap' },
