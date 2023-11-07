@@ -19,7 +19,6 @@ return {
 
         --c/c++
         'codelldb',
-        'clang-format',
 
         -- cmake
         'cmake-language-server',

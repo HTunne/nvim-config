@@ -1,25 +1,15 @@
 return {
   'creativenull/efmls-configs-nvim',
   dependencies = { 'neovim/nvim-lspconfig' },
-  ft = { 'bash', 'c', 'cmake', 'cpp', 'lua', 'typescript', 'python' },
+  ft = { 'bash', 'cmake', 'lua', 'typescript', 'python' },
   config = function()
     local languages = {
       bash = {
         require('efmls-configs.formatters.shfmt'),
         require('efmls-configs.linters.shellcheck'),
       },
-      c = {
-        require('efmls-configs.formatters.clang_format'),
-        require('efmls-configs.formatters.clang_tidy'),
-        require('efmls-configs.linters.clang_tidy'),
-      },
       cmake = {
         require('efmls-configs.linters.cmake_lint'),
-      },
-      cpp = {
-        require('efmls-configs.formatters.clang_format'),
-        require('efmls-configs.formatters.clang_tidy'),
-        require('efmls-configs.linters.clang_tidy'),
       },
       javascript = {
         require('efmls-configs.formatters.eslint'),
