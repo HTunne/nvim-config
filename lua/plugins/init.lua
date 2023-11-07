@@ -8,6 +8,7 @@ return {
   'tpope/vim-repeat',
   'neomake/neomake',
   'lukas-reineke/indent-blankline.nvim',
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'ggandor/leap.nvim',
     config = function()
