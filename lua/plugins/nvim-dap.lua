@@ -38,18 +38,39 @@ return {
         desc = 'step over',
       },
       {
-        '<leader>dro',
+        '<leader>dp',
+        function()
+          require('dap').pause()
+        end,
+        desc = 'step into',
+      },
+      {
+        '<leader>dq',
+        function()
+          require('dap').terminate() -- disconnect? close?
+        end,
+        desc = 'step over',
+      },
+      {
+        '<leader>dr',
+        function()
+          require('dap').restart()
+        end,
+        desc = 'step over',
+      },
+      {
+        '<leader>deo',
         function()
           require('dap').repl.open()
         end,
-        'repl open',
+        desc = 'repl open',
       },
       {
-        '<leader>drl',
+        '<leader>del',
         function()
           require('dap').repl.run_last()
         end,
-        'repl run last',
+        desc = 'repl run last',
       },
 
       {
@@ -57,17 +78,16 @@ return {
         function()
           require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
         end,
-        'set conditional breakpoint',
+        desc = 'set conditional breakpoint',
       },
       {
         '<leader>dsm',
         function()
           require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
         end,
-        'set breakpoint with log message',
+        desc = 'set breakpoint with log message',
       },
     },
-
     config = function()
       local dap = require('dap')
 

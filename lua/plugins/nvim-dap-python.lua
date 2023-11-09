@@ -29,7 +29,7 @@ return {
   },
   config = function()
     local dap_py = require('dap-python')
-    dap_py.setup('/home/h/.local/share/virtualenvs/task-rest-SL2EhAL0/bin/python')
+    dap_py.setup('python')
     dap_py.test_runner = 'pytest'
   end,
 }
