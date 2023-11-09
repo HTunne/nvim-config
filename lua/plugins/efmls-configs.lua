@@ -17,7 +17,7 @@ return {
       },
       lua = {
         require('efmls-configs.formatters.stylua'),
-        require('efmls-configs.linters.luacheck'),
+        require('efmls-configs.linters.selene'),
       },
       typescript = {
         require('efmls-configs.formatters.eslint'),

@@ -36,7 +36,7 @@ return {
         -- lua
         'lua-language-server',
         'stylua',
-        'luacheck',
+        'selene',
 
         -- openscad
         'openscad-lsp',
