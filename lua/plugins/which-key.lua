@@ -16,12 +16,14 @@ return {
         r = { name = '+repl' },
         s = { name = '+set breakpoint' },
       },
-      h = { name = '+gitsigns' },
+      h = {
+        name = '+gitsigns',
+        t = { name = '+toggle' },
+      },
       i = { name = '+diagnostic' },
       l = { name = '+lsp' },
       n = {
         name = '+neorg',
-        i = { name = '+insert' },
         j = { name = '+journal' },
         l = { name = '+list' },
         m = { name = '+mode' },
@@ -31,21 +33,8 @@ return {
         name = '+telescope',
         d = { name = '+telescope-dap' },
       },
-      w = {
-        name = '+vimwiki',
-        w = 'Vimwiki Index',
-        i = 'Vimwiki Diary Index',
-        t = 'Vimwiki Tab Index',
-        s = 'Vimwiki UI Select ',
-        ['<space>'] = {
-          name = '+diary',
-          i = 'Vimwiki Diary Generate Links',
-          t = 'Vimwiki Tab Make Diary Note',
-          y = 'Vimwiki Make Yesterday Diary Note',
-          m = 'Vimwiki Make Tomorrow Diary Note',
-          w = 'Vimwiki Make Diary Note',
-        },
-      },
+      r = { name = '+dispatch' },
+      t = { name = '+trouble' },
     }, { prefix = '<leader>' })
     wk.register({ '<C-w>', '+window' })
   end,
