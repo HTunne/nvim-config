@@ -10,9 +10,8 @@ return {
   ft = 'norg',
   keys = {
     { '<leader>ni', '<cmd>Neorg index<cr>', desc = 'neorg index' },
-    { '<leader>nji', '<cmd>Neorg journal index open<cr>', desc = 'journal toc' },
-    { '<leader>nji', '<cmd>Neorg journal index open<cr>', desc = 'journal update toc' },
-    { '<leader>nju', '<cmd>Neorg journal index<cr>', desc = 'journal today' },
+    { '<leader>nji', '<cmd>Neorg journal toc open<cr>', desc = 'journal toc' },
+    { '<leader>nju', '<cmd>Neorg journal toc update<cr>', desc = 'journal update toc' },
     { '<leader>njt', '<cmd>Neorg journal today<cr>', desc = 'journal today' },
     { '<leader>njy', '<cmd>Neorg journal yesterday<cr>', desc = 'journal yesterday' },
     { '<leader>njm', '<cmd>Neorg journal tomorrow<cr>', desc = 'journal tomorrow' },
@@ -158,11 +157,6 @@ return {
                   '<leader>nli',
                   'core.pivot.invert-list-type',
                   opts = { desc = 'Invert (Un)ordered List' },
-                },
-                {
-                  '<leader>nid',
-                  'core.tempus.insert-date',
-                  opts = { desc = 'Insert Date' },
                 },
               },
               i = {
