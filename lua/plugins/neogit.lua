@@ -1,13 +1,19 @@
 return {
-  "NeogitOrg/neogit",
-  cmd = "Neogit",
+  'NeogitOrg/neogit',
+  cmd = 'Neogit',
   dependencies = {
-    "nvim-lua/plenary.nvim",         -- required
-    "nvim-telescope/telescope.nvim", -- optional
-    "sindrets/diffview.nvim",        -- optional
-    "ibhagwan/fzf-lua",              -- optional
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'sindrets/diffview.nvim',
   },
   config = true,
   keys = {
-  }
+    {
+      '<leader>g',
+      function()
+        require('neogit').open()
+      end,
+      desc = 'open neogit',
+    },
+  },
 }
