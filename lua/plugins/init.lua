@@ -6,8 +6,6 @@ return {
   'milisims/nvim-luaref',
   'kylechui/nvim-surround',
   'tpope/vim-repeat',
-  'neomake/neomake',
-  'lukas-reineke/indent-blankline.nvim',
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'ggandor/leap.nvim',
@@ -16,7 +14,11 @@ return {
     end,
   },
   { 'norcalli/nvim-colorizer.lua', config = true },
-  { 'akinsho/git-conflict.nvim', config = true, cond = require('util').is_git_repo },
+  {
+    'akinsho/git-conflict.nvim',
+    config = true,
+    cond = require('util').is_git_repo,
+  },
   {
     'numToStr/Comment.nvim',
     config = true,
