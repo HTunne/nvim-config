@@ -41,8 +41,8 @@ return {
 
     local function pass(_, _)
       local charset = {}
-      for i = 33, 126 do
-        table.insert(charset, string.char(i))
+      for j = 33, 126 do
+        table.insert(charset, string.char(j))
       end
 
       return random_string(charset, 32)
@@ -51,14 +51,14 @@ return {
     local function passn(_, _)
       local charset = {}
       -- qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890
-      for i = 48, 57 do
-        table.insert(charset, string.char(i))
+      for j = 48, 57 do
+        table.insert(charset, string.char(j))
       end
-      for i = 65, 90 do
-        table.insert(charset, string.char(i))
+      for j = 65, 90 do
+        table.insert(charset, string.char(j))
       end
-      for i = 97, 122 do
-        table.insert(charset, string.char(i))
+      for j = 97, 122 do
+        table.insert(charset, string.char(j))
       end
 
       return random_string(charset, 32)
