@@ -1,7 +1,7 @@
 -----------
 --  map  --
 -----------
---
+
 -- normal mode mappings
 vim.keymap.set('n', 'Y', 'y$', { desc = 'yank to end of line' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'centre after n' })
@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>c', '<cmd>noh<CR>', { desc = 'clear highlights' })
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==', { desc = 'move line down' })
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==', { desc = 'move line up' })
 vim.keymap.set('n', '<leader>o', 'm`o<Esc>0D``', { desc = 'newline below' })
+--[[
 vim.keymap.set('n', '<leader>f', function()
   if vim.opt.foldcolumn:get() == '1' then
     vim.opt.foldcolumn = '0'
@@ -17,6 +18,7 @@ vim.keymap.set('n', '<leader>f', function()
     vim.opt.foldcolumn = '1'
   end
 end, { desc = 'toggle foldcolumn' })
+--]]
 
 -- insert mode mappings
 vim.keymap.set('i', ',', ',<c-g>u', { desc = 'set undo breakpoint on ,' })

@@ -12,6 +12,7 @@ return {
       'openscad',
       'python',
       'rust',
+      'sh',
       'typescript',
       'vue',
     },

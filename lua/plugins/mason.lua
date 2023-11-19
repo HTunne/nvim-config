@@ -22,7 +22,7 @@ return {
 
         -- cmake
         'cmake-language-server',
-        'cmakelint',
+        'cmakelang',
 
         --java
         -- 'java-language-server',
@@ -43,7 +43,8 @@ return {
 
         -- python
         'python-lsp-server',
-        'black',
+        'flake8',
+        'yapf',
         'isort',
 
         --vue
@@ -51,7 +52,6 @@ return {
 
         --tools
         'tree-sitter-cli',
-        'efm',
       },
       start_delay = 1000, -- 3 second delay
     },
