@@ -50,6 +50,7 @@ return {
         'flake8',
         'yapf',
         'isort',
+        'vulture',
 
         --vue
         'vue-language-server',
