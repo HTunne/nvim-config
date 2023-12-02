@@ -102,8 +102,16 @@ return {
         command = '/usr/bin/lldb-vscode',
         name = 'lldb',
       }
+
+      dap.adapters.gdb = {
+        type = 'executable',
+        command = 'gdb',
+        args = { '-i', 'dap' },
+      }
+
       -- configurations
       local lldb = require('dbg-configs/lldb')
+      local gdb = require('dbg-configs/gdb')
       dap.configurations.c = lldb
       dap.configurations.cpp = lldb
       dap.configurations.rust = lldb
