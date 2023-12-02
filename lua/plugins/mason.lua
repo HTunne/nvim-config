@@ -23,6 +23,7 @@ return {
         -- cmake
         'cmake-language-server',
         'cmakelang',
+        'cmakelint',
 
         --java
         -- 'java-language-server',
