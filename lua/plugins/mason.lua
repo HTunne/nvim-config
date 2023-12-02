@@ -38,6 +38,9 @@ return {
         'stylua',
         'selene',
 
+        -- nix
+        'rnix-lsp',
+
         -- openscad
         'openscad-lsp',
 
