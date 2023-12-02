@@ -83,5 +83,6 @@ return {
       vim.api.nvim_exec_autocmds('User', { pattern = 'LspConfigLoaded' })
     end,
   },
+  { 'ray-x/lsp_signature.nvim', opts = {}, event = 'VeryLazy' },
   { 'j-hui/fidget.nvim', config = true, event = 'User NvimDapLoaded' },
 }
