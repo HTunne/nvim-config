@@ -1,5 +1,6 @@
 return {
   'jupyter-vim/jupyter-vim',
+  enabled = false,
   keys = {
     { '<leader>yc', '<cmd>JupyterConnect<CR>', desc = 'jupyter connect' },
     { '<leader>yr', '<cmd>JupyterRunFile<CR>', desc = 'jupyter run file' },
