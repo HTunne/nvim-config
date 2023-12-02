@@ -1,6 +1,7 @@
 ------------------------------------------------------------------------
 --                              plugin                                --
 ------------------------------------------------------------------------
+
 return {
   { 'folke/neodev.nvim', opts = {} },
   'milisims/nvim-luaref',
@@ -13,7 +14,7 @@ return {
       require('leap').add_default_mappings()
     end,
   },
-  { 'norcalli/nvim-colorizer.lua', config = true },
+  { 'norcalli/nvim-colorizer.lua', main = "colorizer", config = true },
   {
     'akinsho/git-conflict.nvim',
     config = true,
