@@ -11,6 +11,7 @@ return {
       'lua',
       'openscad',
       'python',
+      'qml',
       'rust',
       'sh',
       'typescript',
@@ -24,7 +25,7 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
 
-      local servers = { 'bashls', 'cmake', 'rnix', 'rust_analyzer', 'tailwindcss', 'tsserver', 'volar' }
+      local servers = { 'bashls', 'cmake', 'qmlls', 'rnix', 'rust_analyzer', 'tailwindcss', 'tsserver', 'volar' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
           capabilities = require('cmp_nvim_lsp').default_capabilities(),

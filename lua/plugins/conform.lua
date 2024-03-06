@@ -19,10 +19,16 @@ return {
       javascript = { 'eslint', { 'prettierd', 'prettier' } },
       lua = { 'stylua' },
       python = { 'isort', 'yapf' },
+      qml = { 'qmlformat' },
       typescript = { 'eslint', { 'prettierd', 'prettier' } },
       sh = { 'shfmt' },
     },
     formatters = {
+      qmlformat = {
+        command = 'qmlformat',
+        args = { '--inplace', '$FILENAME' },
+        stdin = false,
+      },
       shfmt = {
         prepend_args = { '-i', '2' },
       },
