@@ -32,6 +32,9 @@ return {
       shfmt = {
         prepend_args = { '-i', '2' },
       },
+      yapf = {
+        env = { COLUMN_LIMIT = 80 },
+      },
     },
   },
   init = function()
