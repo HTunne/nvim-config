@@ -7,6 +7,7 @@ return {
   'milisims/nvim-luaref',
   'kylechui/nvim-surround',
   'tpope/vim-repeat',
+  'LunarVim/bigfile.nvim',
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'ggandor/leap.nvim',
