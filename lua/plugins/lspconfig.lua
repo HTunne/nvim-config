@@ -42,6 +42,10 @@ return {
         end,
       })
 
+      lspconfig.volar.setup({
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+      })
+
       lspconfig.java_language_server.setup({
         cmd = { 'java-language-server' },
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
