@@ -2,7 +2,7 @@
 --  settings  --
 ----------------
 
-local indent = 2
+local indent = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
