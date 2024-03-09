@@ -33,6 +33,7 @@ return {
         name = '+telescope',
         d = { name = '+telescope-dap' },
       },
+      q = { name = '+quarto', r = { name = '+run' } },
       r = { name = '+dispatch' },
       t = { name = '+trouble' },
     }, { prefix = '<leader>' })

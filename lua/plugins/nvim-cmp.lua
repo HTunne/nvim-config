@@ -5,14 +5,18 @@ local M = {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
     'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-calc',
+    'paopaol/cmp-doxygen',
     'onsails/lspkind-nvim',
     'doxnit/cmp-luasnip-choice',
     'ray-x/cmp-treesitter',
     'saadparwaiz1/cmp_luasnip',
     'f3fora/cmp-spell',
     'L3MON4D3/LuaSnip',
+    'kdheepak/cmp-latex-symbols',
+    'jmbuhr/cmp-pandoc-references',
   },
 }
 
@@ -29,14 +33,19 @@ function M.config()
   cmp.setup({
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lua' },
-      { name = 'treesitter' },
+      { name = 'otter' },
+      { name = 'pandoc_references' },
+      { name = 'latex_symbols' },
+      { name = 'doxygen' },
       { name = 'luasnip' },
       { name = 'luasnip_choice' },
       { name = 'neorg' },
       { name = 'spell' },
       { name = 'calc' },
-      { name = 'buffer' },
+      { name = 'treesitter', keyword_length = 5, max_item_count = 3 },
+      { name = 'buffer', keyword_length = 5, max_item_count = 3 },
       { name = 'path' },
     },
     snippet = {
@@ -56,12 +65,13 @@ function M.config()
           vim_item.menu = ({
             buffer = '﬘',
             path = 'ﱮ',
-            -- nvim_lsp = 'ﲳ',
+            nvim_lsp = 'ﲳ',
             nvim_lua = '',
             calc = '=',
             treesitter = '',
             luasnip = '',
             spell = '暈',
+            otter = '🦦',
           })[entry.source.name]
 
           return vim_item

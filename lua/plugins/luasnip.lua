@@ -307,5 +307,6 @@ augroup END
       }),
     })
     require('luasnip/loaders/from_vscode').lazy_load()
+    ls.filetype_extend('quarto', { 'markdown' })
   end,
 }
