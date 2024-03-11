@@ -37,6 +37,6 @@ return {
       r = { name = '+dispatch' },
       t = { name = '+trouble' },
     }, { prefix = '<leader>' })
-    wk.register({ '<C-w>', '+window' })
+    wk.register({ '<c-w>', '+window' })
   end,
 }

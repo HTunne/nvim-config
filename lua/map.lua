@@ -3,10 +3,14 @@
 -----------
 
 -- normal mode mappings
+vim.keymap.set('n', '<c-h>', '<c-w><c-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<c-l>', '<c-w><c-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<c-j>', '<c-w><c-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<c-k>', '<c-w><c-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', 'Y', 'y$', { desc = 'yank to end of line' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'centre after n' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'centre after N' })
-vim.keymap.set('n', '<leader>c', '<cmd>noh<CR>', { desc = 'clear highlights' })
+vim.keymap.set('n', '<esc>', '<cmd>noh<CR>', { desc = 'clear highlights' })
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==', { desc = 'move line down' })
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==', { desc = 'move line up' })
 vim.keymap.set('n', '<leader>o', 'm`o<Esc>0D``', { desc = 'newline below' })
@@ -30,6 +34,9 @@ vim.keymap.set('i', '?', '?<c-g>u', { desc = 'set undo breakpoint on ?' })
 vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { desc = 'move highlighted region down' })
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'move highlighted region up' })
 
+-- terminal mode mappings
+vim.keymap.set('t', '<Esc><Esc>', '<c-\\><c-n>', { desc = 'exit terminal mode' })
+
 -- quickfix
 vim.keymap.set('n', '[q', ':cprev<CR>', { desc = 'go to previous quickfix item' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'go to next quickfix item' })
@@ -42,8 +49,8 @@ vim.keymap.set('n', '<leader>q', function()
     local num = vim.api.nvim_win_get_buf(win)
     print(num)
     print(vim.api.nvim_win_get_buf(win))
-    print(vim.api.nvim_buf_get_option(num, "buftype"))
-    if vim.api.nvim_buf_get_option(num, "buftype") == "quickfix" then
+    print(vim.api.nvim_buf_get_option(num, 'buftype'))
+    if vim.api.nvim_buf_get_option(num, 'buftype') == 'quickfix' then
       vim.exec('cclose')
     end
   end
@@ -66,7 +73,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'jump to definition' })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'display hover info' })
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'list implementations' })
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'display signature info' })
+    vim.keymap.set('n', '<c-s>', vim.lsp.buf.signature_help, { desc = 'display signature info' })
     vim.keymap.set('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder, { desc = 'add workspace folder' })
     vim.keymap.set('n', '<leader>lwr', vim.lsp.buf.remove_workspace_folder, { desc = 'remove workspace folder' })
     vim.keymap.set('n', '<leader>lwl', function()

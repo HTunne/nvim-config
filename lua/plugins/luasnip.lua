@@ -5,12 +5,6 @@ return {
     'rafamadriz/friendly-snippets',
   },
   config = function()
-    vim.keymap.set({ 'i', 's' }, '<C-n>', function()
-      if require('luasnip').choice_active() then
-        require('luasnip').change_choice(1)
-      end
-    end, { desc = 'Next choice node' })
-
     local ls = require('luasnip')
     -- some shorthands...
     local s = ls.snippet

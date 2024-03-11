@@ -86,37 +86,32 @@ function M.config()
         border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
       },
     },
-    mapping = {
-      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-e>'] = cmp.mapping({
-        i = cmp.mapping.abort(),
-        c = cmp.mapping.close(),
-      }),
-      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
-      ['<Tab>'] = cmp.mapping(function(fallback)
-        if luasnip.expand_or_jumpable() then
+    mapping = cmp.mapping.preset.insert({
+      ['<c-k>'] = cmp.mapping.select_prev_item(),
+      ['<c-j>'] = cmp.mapping.select_next_item(),
+      ['<c-n>'] = cmp.mapping(function()
+        if require('luasnip').choice_active() then
+          require('luasnip').change_choice(1)
+        end
+      end),
+      ['<c-p>'] = cmp.mapping(function()
+        if require('luasnip').choice_active() then
+          require('luasnip').change_choice(-1)
+        end
+      end),
+      ['<c-y>'] = cmp.mapping.confirm({ select = true }),
+      ['<c-Space>'] = cmp.mapping.complete({}),
+      ['<c-l>'] = cmp.mapping(function()
+        if luasnip.expand_or_locally_jumpable() then
           luasnip.expand_or_jump()
-        elseif cmp.visible() then
-          cmp.select_next_item()
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
         end
       end, { 'i', 's' }),
-      ['<S-Tab>'] = cmp.mapping(function(fallback)
-        if luasnip.jumpable(-1) then
+      ['<c-h>'] = cmp.mapping(function()
+        if luasnip.locally_jumpable(-1) then
           luasnip.jump(-1)
-        elseif cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
         end
       end, { 'i', 's' }),
-    },
+    }),
   })
 end
 

@@ -33,7 +33,7 @@ return {
       defualts = {
         mappins = {
           i = {
-            ['<C-q>'] = actions.send_to_qflist,
+            ['<c-q>'] = actions.send_to_qflist,
           },
         },
       },

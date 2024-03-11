@@ -91,7 +91,7 @@ return {
                   opts = { desc = 'Mark as Ambigous' },
                 },
                 {
-                  '<C-Space>',
+                  '<c-Space>',
                   'core.qol.todo_items.todo.task_cycle',
                   opts = { desc = 'Cycle Task' },
                 },
@@ -101,7 +101,7 @@ return {
                   opts = { desc = 'Create New Note' },
                 },
                 {
-                  '<CR>',
+                  '<cr>',
                   'core.esupports.hop.hop-link',
                   opts = { desc = 'Jump to Link' },
                 },
@@ -161,23 +161,23 @@ return {
               },
               i = {
                 {
-                  '<C-t>',
+                  '<c-t>',
                   'core.promo.promote',
                   opts = { desc = 'Promote Object (Recursively)' },
                 },
                 {
-                  '<C-d>',
+                  '<c-d>',
                   'core.promo.demote',
                   opts = { desc = 'Demote Object (Recursively)' },
                 },
                 {
-                  '<M-CR>',
+                  '<m-cr>',
                   'core.itero.next-iteration',
-                  '<CR>',
+                  '<cr>',
                   opts = { desc = 'Continue Object' },
                 },
                 {
-                  '<M-d>',
+                  '<m-d>',
                   'core.tempus.insert-date-insert-mode',
                   opts = { desc = 'Insert Date' },
                 },
@@ -213,7 +213,7 @@ return {
             keybinds.map_event_to_mode('presenter', {
               n = {
                 {
-                  '<CR>',
+                  '<cr>',
                   'core.presenter.next_page',
                   opts = { desc = 'Next Page' },
                 },
@@ -251,17 +251,17 @@ return {
               n = {
                 {
                   '<leader>nmn',
-                  ':Neorg mode norg<CR>',
+                  ':Neorg mode norg<cr>',
                   opts = { desc = 'Enter Norg Mode' },
                 },
                 {
                   '<leader>nmh',
-                  ':Neorg mode traverse-heading<CR>',
+                  ':Neorg mode traverse-heading<cr>',
                   opts = { desc = 'Enter Heading Traversal Mode' },
                 },
                 {
                   'gO',
-                  ':Neorg toc split<CR>',
+                  ':Neorg toc split<cr>',
                   opts = { desc = 'Open a Table of Contents' },
                 },
               },

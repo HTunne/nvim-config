@@ -56,7 +56,7 @@ return {
     { '<leader>htd', require('gitsigns').toggle_deleted, desc = 'toggle deleted' },
 
     -- Text object
-    { 'ih', ':<C-U>Gitsigns select_hunk<CR>', mode = { 'o', 'x' }, desc = 'select hunk' },
+    { 'ih', ':<c-U>Gitsigns select_hunk<cr>', mode = { 'o', 'x' }, desc = 'select hunk' },
   },
   opts = {},
 }
