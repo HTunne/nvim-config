@@ -63,15 +63,15 @@ function M.config()
         -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
         before = function(entry, vim_item)
           vim_item.menu = ({
-            buffer = '﬘',
-            path = 'ﱮ',
-            nvim_lsp = 'ﲳ',
+            buffer = '󰯃',
+            path = '',
+            nvim_lsp = '󰧑',
             nvim_lua = '',
-            calc = '=',
+            calc = '󰃬',
             treesitter = '',
             luasnip = '',
-            spell = '暈',
             otter = '🦦',
+            spell = '󰓆',
           })[entry.source.name]
 
           return vim_item
