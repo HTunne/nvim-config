@@ -8,6 +8,7 @@ return {
   'kylechui/nvim-surround',
   'tpope/vim-repeat',
   'LunarVim/bigfile.nvim',
+  'tpope/vim-sleuth',
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'ggandor/leap.nvim',
