@@ -26,11 +26,5 @@ return {
     config = true,
     keys = { { 'gc', mode = { 'n', 'v' } }, { 'gb', mode = { 'n', 'v' } } },
   },
-  {
-    'peterhoeg/vim-qml',
-    event = 'BufRead',
-    ft = { 'qml' },
-  },
-
   { 'htunne/neorg-taskwarrior', dev = true },
 }
