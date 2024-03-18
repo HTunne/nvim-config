@@ -5,18 +5,18 @@
 return {
   { 'folke/neodev.nvim', opts = {} },
   'milisims/nvim-luaref',
-  'kylechui/nvim-surround',
+  { 'kylechui/nvim-surround', event = 'VeryLazy', opts = {} },
   'tpope/vim-repeat',
   'LunarVim/bigfile.nvim',
   'tpope/vim-sleuth',
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   {
     'ggandor/leap.nvim',
     config = function()
       require('leap').add_default_mappings()
     end,
   },
-  { 'norcalli/nvim-colorizer.lua', main = "colorizer", config = true },
+  { 'norcalli/nvim-colorizer.lua', main = 'colorizer', config = true },
   {
     'akinsho/git-conflict.nvim',
     config = true,
