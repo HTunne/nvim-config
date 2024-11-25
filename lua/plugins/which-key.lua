@@ -6,37 +6,30 @@ return {
     wk.setup(opts)
 
     -- leader mappings
-    wk.register({
-      ['<space>'] = { name = '+hop' },
-      b = { name = '+buffers' },
-      d = {
-        name = '+dap',
-        o = { name = '+osv' },
-        p = { name = '+python' },
-        r = { name = '+repl' },
-        s = { name = '+set breakpoint' },
-      },
-      h = {
-        name = '+gitsigns',
-        t = { name = '+toggle' },
-      },
-      i = { name = '+diagnostic' },
-      l = { name = '+lsp' },
-      n = {
-        name = '+neorg',
-        j = { name = '+journal' },
-        l = { name = '+list' },
-        m = { name = '+mode' },
-        t = { name = '+todo' },
-      },
-      p = {
-        name = '+telescope',
-        d = { name = '+telescope-dap' },
-      },
-      q = { name = '+quarto', r = { name = '+run' } },
-      r = { name = '+dispatch' },
-      t = { name = '+trouble' },
-    }, { prefix = '<leader>' })
-    wk.register({ '<c-w>', '+window' })
+    wk.add({
+      { '<leader><space>', group = 'hop' },
+      { '<leader>b', group = 'buffers' },
+      { '<leader>d', group = 'dap' },
+      { '<leader>do', group = 'osv' },
+      { '<leader>dp', group = 'python' },
+      { '<leader>dr', group = 'repl' },
+      { '<leader>ds', group = 'set breakpoint' },
+      { '<leader>h', group = 'gitsigns' },
+      { '<leader>ht', group = 'toggle' },
+      { '<leader>i', group = 'diagnostic' },
+      { '<leader>l', group = 'lsp' },
+      { '<leader>n', group = 'neorg' },
+      { '<leader>nj', group = 'journal' },
+      { '<leader>nl', group = 'list' },
+      { '<leader>nm', group = 'mode' },
+      { '<leader>nt', group = 'todo' },
+      { '<leader>p', group = 'telescope' },
+      { '<leader>pd', group = 'telescope-dap' },
+      { '<leader>q', group = 'quarto' },
+      { '<leader>qr', group = 'run' },
+      { '<leader>r', group = 'dispatch' },
+      { '<leader>t', group = 'trouble' },
+      { '<c-w>', group = 'window' },
+    })
   end,
 }
