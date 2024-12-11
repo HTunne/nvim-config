@@ -25,7 +25,7 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
 
-      local servers = { 'bashls', 'cmake', 'qmlls', 'rnix', 'rust_analyzer', 'tailwindcss', 'tsserver', 'volar' }
+      local servers = { 'bashls', 'cmake', 'qmlls', 'rust_analyzer', 'tailwindcss', 'ts_ls', 'volar' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
           capabilities = require('cmp_nvim_lsp').default_capabilities(),
@@ -73,6 +73,25 @@ return {
           },
         },
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      })
+
+      lspconfig.nixd.setup({
+        cmd = { 'nixd' },
+        settings = {
+          nixd = {
+            nixpkgs = {
+              expr = "import <nixpkgs> { }",
+            },
+            options = {
+              nixos = {
+                expr = '(builtins.getFlake "$HOME/.config/dotfiles/flanke.nix").nixosConfigurations.default.options',
+              },
+              home_manager = {
+                expr = '(builtins.getFlake "$HOME/.config/dotfiles/flanke.nix").homeConfigurations.default.options',
+              },
+            }
+          },
+        }
       })
 
       lspconfig.openscad_lsp.setup({

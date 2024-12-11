@@ -18,6 +18,7 @@ return {
       bash = { 'shfmt' },
       javascript = { 'eslint', { 'prettierd', 'prettier' } },
       lua = { 'stylua' },
+      nix = { 'alejandra' },
       python = { 'isort', 'yapf' },
       qml = { 'qmlformat' },
       typescript = { 'eslint', { 'prettierd', 'prettier' } },
