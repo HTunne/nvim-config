@@ -29,6 +29,5 @@ return {
       sign = '⚑',
       virt_text = 'hello world',
     },
-    mappings = {},
   },
 }
