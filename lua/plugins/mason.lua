@@ -3,7 +3,9 @@ return {
     'williamboman/mason.nvim',
     lazy = false,
     build = ':MasonUpdate', -- :MasonUpdate updates registry contents
-    opts = {},
+    opts = {
+      PATH = "append"
+    },
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
