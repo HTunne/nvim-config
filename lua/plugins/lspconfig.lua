@@ -16,97 +16,68 @@ return {
       'sh',
       'typescript',
       'vue',
+      'zig',
     },
     dependencies = {
       'p00f/clangd_extensions.nvim',
-      'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-nvim-lsp',
+      'saghen/blink.cmp',
     },
-    config = function()
-      local lspconfig = require('lspconfig')
-
-      local servers = { 'bashls', 'cmake', 'qmlls', 'rust_analyzer', 'tailwindcss', 'ts_ls', 'volar' }
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup({
-          capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        })
-      end
-
-      lspconfig.clangd.setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        on_attach = function()
-          require('clangd_extensions.inlay_hints').setup_autocmd()
-          require('clangd_extensions.inlay_hints').set_inlay_hints()
-          vim.keymap.set('n', '<leader>ls', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'switch source/header' })
-          vim.keymap.set('n', '<leader>lt', '<cmd>ClangdTypeHierarchy<cr>', { desc = 'show type heirachy' })
-        end,
-      })
-
-      lspconfig.volar.setup({
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-      })
-
-      lspconfig.java_language_server.setup({
-        cmd = { 'java-language-server' },
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      })
-
-      lspconfig.lua_ls.setup({
-        settings = {
-          Lua = {
-            runtime = {
-              version = 'LuaJIT',
-            },
-            format = {
-              enable = false,
-            },
-            diagnostics = {
-              globals = { 'vim' },
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file('', true),
-              checkThirdParty = false,
-            },
-            telemetry = {
-              enable = false,
+    opts = {
+      servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              runtime = {
+                version = 'LuaJIT',
+              },
+              format = {
+                enable = false,
+              },
+              diagnostics = {
+                globals = { 'vim' },
+              },
+              workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+                checkThirdParty = false,
+              },
+              telemetry = {
+                enable = false,
+              },
             },
           },
         },
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      })
-
-      lspconfig.nixd.setup({
-        cmd = { 'nixd' },
-        settings = {
-          nixd = {
-            nixpkgs = {
-              expr = "import <nixpkgs> { }",
-            },
-            options = {
-              nixos = {
-                expr = '(builtins.getFlake "$HOME/.config/dotfiles/flanke.nix").nixosConfigurations.default.options',
-              },
-              home_manager = {
-                expr = '(builtins.getFlake "$HOME/.config/dotfiles/flanke.nix").homeConfigurations.default.options',
-              },
-            }
-          },
-        }
-      })
-
-      lspconfig.openscad_lsp.setup({
-        cmd = { 'openscad-lsp', '--stdio', '--fmt-style', 'LLVM' },
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      })
-
-      lspconfig.pylsp.setup({
-        root_dir = lspconfig.util.root_pattern('.git', vim.fn.getcwd()),
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      })
-
+        bashls = {},
+        cmake = {},
+        clangd = {
+          on_attach = function()
+            require('clangd_extensions.inlay_hints').setup_autocmd()
+            require('clangd_extensions.inlay_hints').set_inlay_hints()
+            vim.keymap.set('n', '<leader>ls', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'switch source/header' })
+            vim.keymap.set('n', '<leader>lt', '<cmd>ClangdTypeHierarchy<cr>', { desc = 'show type heirachy' })
+          end,
+        },
+        qmlls = {},
+        java_language_server = {
+          cmd = { 'java-language-server' },
+        },
+        rust_analyzer = {},
+        tailwindcss = {},
+        ts_ls = {},
+        volar = {
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+        },
+        zls = {},
+      },
+    },
+    config = function(_, opts)
+      local lspconfig = require('lspconfig')
+      for server, config in pairs(opts.servers) do
+        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
       vim.api.nvim_exec_autocmds('User', { pattern = 'LspConfigLoaded' })
     end,
   },
   { 'ray-x/lsp_signature.nvim', opts = {}, event = 'VeryLazy' },
-  { 'j-hui/fidget.nvim', config = true, event = 'User NvimDapLoaded' },
+  { 'j-hui/fidget.nvim', config = true, event = 'LspAttach' },
 }

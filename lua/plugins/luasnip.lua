@@ -1,9 +1,11 @@
 return {
   'L3MON4D3/LuaSnip',
   event = 'InsertEnter',
+  version = 'v2.*',
   dependencies = {
     'rafamadriz/friendly-snippets',
   },
+  build = "make install_jsregexp",
   config = function()
     local ls = require('luasnip')
     -- some shorthands...
@@ -302,5 +304,6 @@ augroup END
     })
     require('luasnip/loaders/from_vscode').lazy_load()
     ls.filetype_extend('quarto', { 'markdown' })
+    ls.filetype_extend('vue', { 'vue' })
   end,
 }
