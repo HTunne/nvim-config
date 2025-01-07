@@ -7,9 +7,15 @@ return {
   'milisims/nvim-luaref',
   { 'kylechui/nvim-surround', event = 'VeryLazy', opts = {} },
   'tpope/vim-repeat',
-  'LunarVim/bigfile.nvim',
-  'tpope/vim-sleuth',
-  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  -- 'LunarVim/bigfile.nvim',
+  {
+    'tpope/vim-sleuth',
+    event = 'VeryLazy',
+    keys = {
+      { '<leader>s', '<cmd>Sleuth<CR>', desc = 'run sleuth' },
+    },
+  },
+  -- { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
   {
     'ggandor/leap.nvim',
     config = function()

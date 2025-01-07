@@ -1,5 +1,6 @@
 return {
   'folke/twilight.nvim',
+  enabled = false,
   event = 'InsertEnter',
   config = function()
     require('twilight').setup()
