@@ -9,6 +9,7 @@ return {
   event = 'InsertEnter',
   opts = {
     snippets = {
+      preset = 'luasnip',
       expand = function(snippet)
         require('luasnip').lsp_expand(snippet)
       end,
@@ -23,7 +24,7 @@ return {
       end,
     },
     sources = {
-      default = { 'lsp', 'luasnip', 'path', 'buffer', 'snippets' },
+      default = { 'lsp', 'path', 'buffer', 'snippets' },
       providers = {
         lsp = {
           name = 'lsp',
@@ -32,15 +33,6 @@ return {
           -- kind = 'LSP',
           -- fallbacks = { 'snippets', 'luasnip', 'buffer' },
           score_offset = 90, -- the higher the number, the higher the priority
-        },
-        luasnip = {
-          name = 'luasnip',
-          enabled = true,
-          module = 'blink.cmp.sources.luasnip',
-          min_keyword_length = 2,
-          -- fallbacks = { 'snippets' },
-          score_offset = 85,
-          max_items = 8,
         },
         path = {
           name = 'Path',
@@ -69,10 +61,10 @@ return {
         snippets = {
           name = 'snippets',
           enabled = true,
-          max_items = 3,
+          max_items = 8,
           module = 'blink.cmp.sources.snippets',
-          min_keyword_length = 3,
-          score_offset = 80, -- the higher the number, the higher the priority
+          min_keyword_length = 2,
+          score_offset = 85, -- the higher the number, the higher the priority
         },
       },
     },
