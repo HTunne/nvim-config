@@ -22,7 +22,11 @@ return {
       require('leap').add_default_mappings()
     end,
   },
-  { 'norcalli/nvim-colorizer.lua', main = 'colorizer', config = true },
+  {
+    'catgoose/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    keys = { '<leader>uz', '<cmd>ColorizerToggle<CR>', desc = 'toggle colorizer' },
+  },
   {
     'akinsho/git-conflict.nvim',
     config = true,
