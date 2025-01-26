@@ -28,6 +28,11 @@ return {
     keys = { '<leader>uz', '<cmd>ColorizerToggle<CR>', desc = 'toggle colorizer' },
   },
   {
+    'hat0uma/csvview.nvim',
+    opts={},
+    keys = { '<leader>uv','<cmd>CsvViewToggle', desc = 'toggle csvview' },
+  },
+  {
     'akinsho/git-conflict.nvim',
     config = true,
     cond = require('util').is_git_repo,
