@@ -40,5 +40,6 @@ return {
     config = true,
     keys = { { 'gc', mode = { 'n', 'v' } }, { 'gb', mode = { 'n', 'v' } } },
   },
-  { 'htunne/neorg-taskwarrior', dev = true },
+  'stevearc/vim-arduino',
+  -- { 'htunne/neorg-taskwarrior', dev = true },
 }

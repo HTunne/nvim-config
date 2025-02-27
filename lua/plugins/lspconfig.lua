@@ -2,6 +2,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     ft = {
+      'arduino',
       'bash',
       'c',
       'cmake',
@@ -24,6 +25,9 @@ return {
     },
     opts = {
       servers = {
+        arduino_language_server = {
+          cmd = { 'arduino_language_server -fqbn arduino:avr:nano' },
+        },
         lua_ls = {
           settings = {
             Lua = {

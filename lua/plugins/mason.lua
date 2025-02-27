@@ -14,6 +14,9 @@ return {
     },
     opts = {
       ensure_installed = {
+        -- arduino
+        'arduino-language-server',
+
         -- bash
         'bash-language-server',
         'shfmt',
