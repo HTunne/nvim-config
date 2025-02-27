@@ -5,7 +5,7 @@ return {
   dependencies = {
     'rafamadriz/friendly-snippets',
   },
-  build = "make install_jsregexp",
+  build = 'make install_jsregexp',
   config = function()
     local ls = require('luasnip')
     -- some shorthands...
@@ -267,23 +267,9 @@ augroup END
         t('('),
         i(2, 'Scope'),
         t('): '),
-        i(3, 'Subject. Consise description on the changes. Imperative, lower case and no final dot'),
-        c(4, {
-          sn(1, {
-            t({ '', '', '' }),
-            i(1, 'Body. Motivation for the change and contrast this with previous behavior'),
-          }),
-          t({ '' }),
-        }),
-        c(5, {
-          sn(1, {
-            t({ '', '', '' }),
-            i(1, 'Footer. Information about Breaking Changes and reference issues that this commit closes'),
-          }),
-          t({ '' }),
-        }),
+        i(3, 'Subject. Concise description on the changes. Imperative, lower case and no final dot'),
       }),
-      s('czs', {
+      s('czl', {
         c(1, {
           t('feat'),
           t('fix'),
@@ -299,7 +285,21 @@ augroup END
         t('('),
         i(2, 'Scope'),
         t('): '),
-        i(3, 'Subject. Consise description on the changes. Imperative, lower case and no final dot'),
+        i(3, 'Subject. Concise description on the changes. Imperative, lower case and no final dot'),
+        c(4, {
+          sn(1, {
+            t({ '', '', '' }),
+            i(1, 'Body. Motivation for the change and contrast this with previous behaviour'),
+          }),
+          t({ '' }),
+        }),
+        c(5, {
+          sn(1, {
+            t({ '', '', '' }),
+            i(1, 'Footer. Information about Breaking Changes and reference issues that this commit closes'),
+          }),
+          t({ '' }),
+        }),
       }),
     })
     require('luasnip/loaders/from_vscode').lazy_load()
