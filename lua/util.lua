@@ -1,6 +1,9 @@
 local M = {}
 
 function M.is_git_repo()
+  if vim.fn.isdirectory(vim.fn.getcwd() .. '/.git') == 1 then
+    return true
+  end
   for dir in vim.fs.parents(vim.fn.getcwd()) do
     if vim.fn.isdirectory(dir .. '/.git') == 1 then
       return true
