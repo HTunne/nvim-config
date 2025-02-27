@@ -1,5 +1,6 @@
 return {
   'nvim-neorg/neorg',
+  enabled = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',

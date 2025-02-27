@@ -1,6 +1,7 @@
 return {
   {
     'vimwiki/vimwiki',
+    enabled=false,
     lazy = false,
     cond = function()
       return string.find(vim.api.nvim_buf_get_name(0), '/notes/')

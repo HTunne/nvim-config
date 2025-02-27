@@ -33,6 +33,7 @@ vim.opt.laststatus = 2
 vim.opt.showmode = false
 vim.opt.exrc = true
 vim.opt.virtualedit = 'block'
+vim.opt.conceallevel = 2
 
 -- Disable netrw
 vim.g.loaded_netrw = 1
