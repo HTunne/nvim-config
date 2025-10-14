@@ -4,7 +4,8 @@ return {
   -- !Important! Make sure you're using the latest release of LuaSnip
   -- `main` does not work at the moment
   dependencies = {
-    'L3MON4D3/LuaSnip', version = 'v2.*'
+    'L3MON4D3/LuaSnip',
+    version = 'v2.*',
   },
   event = 'InsertEnter',
   opts = {
@@ -83,4 +84,5 @@ return {
       ['<C-e>'] = { 'hide', 'fallback' },
     },
   },
+  opts_extend = { 'sources.default' },
 }

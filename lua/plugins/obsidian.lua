@@ -1,8 +1,7 @@
 return {
-  'epwalsh/obsidian.nvim',
-  version = '*',
+  'obsidian-nvim/obsidian.nvim',
+  -- version = '*',
   lazy = true,
-  opts = {},
   ft = 'markdown',
   keys = {
     { '<leader>no', '<CMD>ObsidianOpen<CR>', desc = 'Open in obsidian app' },
@@ -23,18 +22,50 @@ return {
         local client = require('obsidian').get_client()
         client:command('ObsidianNew', { args = project .. '.md' })
       end,
-      desc = 'Open tomorrows note',
+      desc = 'Open note for this project',
     },
+  },
+  cmd = {
+    'ObsidianBacklinks',
+    'ObsidianCheck',
+    'ObsidianDailies',
+    'ObsidianDebug',
+    'ObsidianExtractNote',
+    'ObsidianFollowLink',
+    'ObsidianLink',
+    'ObsidianLinkNew',
+    'ObsidianLinks',
+    'ObsidianNew',
+    'ObsidianNewFromTemplate',
+    'ObsidianOpen',
+    'ObsidianPasteImg',
+    'ObsidianQuickSwitch',
+    'ObsidianRename',
+    'ObsidianSearch',
+    'ObsidianTOC',
+    'ObsidianTags',
+    'ObsidianTemplate',
+    'ObsidianToday',
+    'ObsidianToggleCheckbox',
+    'ObsidianTomorrow',
+    'ObsidianWorkspace',
+    'ObsidianYesterday',
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'saghen/blink.cmp',
   },
   opts = {
     workspaces = {
       {
-        name = 'pk',
-        path = '~/notes',
+        name = 'home',
+        path = vim.fn.expand("~") .. '/notes',
       },
     },
+  },
+  completion = {
+    nvim_cmp = false,
+    blink = true,
+    min_chars = 0,
   },
 }

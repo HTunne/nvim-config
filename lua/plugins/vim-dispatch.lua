@@ -2,7 +2,7 @@ return {
   'radenling/vim-dispatch-neovim',
   dependencies = { 'tpope/vim-dispatch' },
   keys = {
-    { '<leader>rm', '<cmd>Make<CR>', desc = 'dispatch' },
+    { '<leader>rm', '<cmd>Make<CR>', desc = 'make' },
     {
       '<leader>rs',
       function()

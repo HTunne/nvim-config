@@ -15,20 +15,20 @@ return {
     },
   },
   {
+    'kjuq/sixelview.nvim',
+    opts = {},
+  },
+  -- { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  {
     'ggandor/leap.nvim',
     config = function()
       require('leap').add_default_mappings()
     end,
   },
   {
-    'catgoose/nvim-colorizer.lua',
-    event = 'BufReadPre',
-    keys = { '<leader>uz', '<cmd>ColorizerToggle<CR>', desc = 'toggle colorizer' },
-  },
-  {
     'hat0uma/csvview.nvim',
-    opts={},
-    keys = { '<leader>uv','<cmd>CsvViewToggle', desc = 'toggle csvview' },
+    opts = {},
+    keys = { '<leader>uv', '<cmd>CsvViewToggle', desc = 'toggle csvview' },
   },
   {
     'akinsho/git-conflict.nvim',

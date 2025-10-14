@@ -46,13 +46,15 @@ return {
 
     local function passn(_, _)
       local charset = {}
-      -- qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890
+      -- 0123456789
       for j = 48, 57 do
         table.insert(charset, string.char(j))
       end
+      -- ABCDEFGHIJKLMNOPQRSTUVWXYZ
       for j = 65, 90 do
         table.insert(charset, string.char(j))
       end
+      -- abcdefghijklmnopqrstuvwxyz
       for j = 97, 122 do
         table.insert(charset, string.char(j))
       end
