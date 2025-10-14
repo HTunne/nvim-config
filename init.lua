@@ -3,7 +3,7 @@
 -- TODO: gitconflict
 require('settings')
 require('keymap')
--- require('lsp')
+require('lsp')
 require('obsidian')
 
 vim.pack.add({ 'https://github.com/BirdeeHub/lze' }, { confirm = true })
