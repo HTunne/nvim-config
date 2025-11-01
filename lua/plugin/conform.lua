@@ -10,18 +10,15 @@ return {
           lua = { 'stylua' },
           nix = { 'alejandra' },
           python = { 'isort', 'yapf' },
-          qml = { 'qmlformat' },
+          qml = { 'qmlformat',  'pyside6_qmlformat', stop_after_first = true },
           typescript = { 'prettierd', 'prettier', stop_after_first = true },
           sh = { 'shfmt' },
         },
         formatters = {
-          qmlformat = {
-            command = 'qmlformat',
+          pyside6_qmlformat = {
+            command = 'pyside6-qmlformat',
             args = { '--inplace', '$FILENAME' },
             stdin = false,
-          },
-          shfmt = {
-            prepend_args = { '-i', '2' },
           },
           yapf = {
             env = { COLUMN_LIMIT = 80 },
