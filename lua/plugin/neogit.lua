@@ -6,8 +6,8 @@ return {
     end,
     keys = {
       {
-        '<leader>g',
-        function()
+        lhs = '<leader>g',
+        rhs = function()
           require('neogit').open()
         end,
         mode = { 'n' },

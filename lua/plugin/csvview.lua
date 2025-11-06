@@ -15,7 +15,7 @@ return {
       })
     end,
     keys = {
-      { '<leader>v', '<CMD>CsvViewToggle<CR>', mode = { 'n' }, desc = 'toggle csvview' },
+      { lhs = '<leader>v', rhs = '<CMD>CsvViewToggle<CR>', mode = { 'n' }, desc = 'toggle csvview' },
     },
   },
 }
