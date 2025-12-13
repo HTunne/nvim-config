@@ -7,12 +7,13 @@ return {
       local spec_treesitter = require('mini.ai').gen_spec.treesitter
       require('mini.ai').setup({
         custom_textobjects = {
-          F = spec_treesitter({ a = '@function.outer', i = '@function.inner' }),
-          C = spec_treesitter({ a = '@class.outer', i = '@class.inner' }),
+          m = spec_treesitter({ a = '@function.outer', i = '@function.inner' }),
+          c = spec_treesitter({ a = '@class.outer', i = '@class.inner' }),
           o = spec_treesitter({
             a = { '@conditional.outer', '@loop.outer' },
             i = { '@conditional.inner', '@loop.inner' },
           }),
+          x = spec_treesitter({ a = '@comment.outer', i = '@comment.inner' }),
         },
       })
       require('mini.operators').setup()
