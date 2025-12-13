@@ -2,6 +2,14 @@ return {
   src = 'https://github.com/ibhagwan/fzf-lua',
   data = {
     after = function()
+      require('fzf-lua').setup({
+        'ivy',
+        keymap = {
+          fzf = {
+            ['ctrl-q'] = 'select-all+accept',
+          },
+        },
+      })
       vim.keymap.set('n', '<leader>ff', function()
         require('fzf-lua').git_files()
       end, { desc = 'find git file' })

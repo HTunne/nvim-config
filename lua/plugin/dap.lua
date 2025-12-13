@@ -40,55 +40,55 @@ return {
     end,
     keys = {
       {
-        lhs = '<leader>db',
-        rhs = function()
+        '<leader>db',
+        function()
           require('dap').toggle_breakpoint()
         end,
         mode = { 'n' },
         desc = 'toggle breakpoint',
       },
       {
-        lhs = '<leader>dc',
-        rhs = function()
+        '<leader>dc',
+        function()
           require('dap').continue()
         end,
         mode = { 'n' },
         desc = 'continue',
       },
       {
-        lhs = '<leader>di',
-        rhs = function()
+        '<leader>di',
+        function()
           require('dap').step_into()
         end,
         mode = { 'n' },
         desc = 'step into',
       },
       {
-        lhs = '<leader>do',
-        rhs = function()
+        '<leader>do',
+        function()
           require('dap').step_out()
         end,
         mode = { 'n' },
         desc = 'step out',
       },
       {
-        lhs = '<leader>dv',
-        rhs = function()
+        '<leader>dv',
+        function()
           require('dap').step_over()
         end,
         mode = { 'n' },
         desc = 'step over',
       },
       {
-        lhs = '<leader>dp',
-        rhs = function()
+        '<leader>dp',
+        function()
           require('dap').pause()
         end,
         mode = { 'n' },
         desc = 'step into',
       },
       {
-        lhs = '<leader>dq',
+        '<leader>dq',
         rhs = function()
           require('dap').terminate() -- disconnect? close?
         end,
@@ -96,40 +96,40 @@ return {
         desc = 'step over',
       },
       {
-        lhs = '<leader>dr',
-        rhs = function()
+        '<leader>dr',
+        function()
           require('dap').restart()
         end,
         mode = { 'n' },
         desc = 'step over',
       },
       {
-        lhs = '<leader>deo',
-        rhs = function()
+        '<leader>deo',
+        function()
           require('dap').repl.open()
         end,
         mode = { 'n' },
         desc = 'repl open',
       },
       {
-        lhs = '<leader>del',
-        rhs = function()
+        '<leader>del',
+        function()
           require('dap').repl.run_last()
         end,
         mode = { 'n' },
         desc = 'repl run last',
       },
       {
-        lhs = '<leader>dsr',
-        rhs = function()
+        '<leader>dsr',
+        function()
           require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
         end,
         mode = { 'n' },
         desc = 'set conditional breakpoint',
       },
       {
-        lhs = '<leader>dsm',
-        rhs = function()
+        '<leader>dsm',
+        function()
           require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
         end,
         mode = { 'n' },
