@@ -45,5 +45,8 @@ return {
       -- Text object
       vim.keymap.set({ 'o', 'x' }, 'ih', ':<c-U>Gitsigns select_hunk<cr>', { desc = 'select hunk' })
     end,
+    dep_of = {
+      'barbar.nvim'
+    }
   },
 }
