@@ -52,12 +52,12 @@
 
         options.settings.wrapped_config = lib.mkOption {
           type = wlib.types.stringable;
-          default = ./config;
+          default = ./.;
         };
 
         options.settings.unwrapped_config = lib.mkOption {
           type = lib.types.either wlib.types.stringable lib.types.luaInline;
-          default = lib.generators.mkLuaInline "vim.uv.os_homedir() .. '/.config/dotfiles/modules/wrappedPrograms/neovim/config'";
+          default = lib.generators.mkLuaInline "vim.uv.os_homedir() .. '/.config/nvim'";
         };
 
         config.settings.dont_link = config.binName != "nvim";
