@@ -16,7 +16,7 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
-  
+
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = inputs.nixpkgs.lib.platforms.all;
@@ -35,7 +35,7 @@
       }: {
         imports = [wlib.wrapperModules.neovim];
 
-        options.settings.test_mode = lib.mkOption {
+        options.settings.dev_mode = lib.mkOption {
           type = lib.types.bool;
           default = false;
           description = ''
@@ -46,7 +46,7 @@
         };
 
         config.settings.config_directory =
-          if config.settings.test_mode
+          if config.settings.dev_mode
           then config.settings.unwrapped_config
           else config.settings.wrapped_config;
 
@@ -62,7 +62,7 @@
 
         config.settings.dont_link = config.binName != "nvim";
 
-        config.binName = lib.mkIf config.settings.test_mode (lib.mkDefault "vim");
+        config.binName = lib.mkIf config.settings.dev_mode (lib.mkDefault "vim");
 
         config.settings.aliases = lib.mkIf (config.binName == "nvim") ["vi" "vim"];
 
@@ -163,6 +163,7 @@
       };
 
       flake.homeModules = {
+        default = inputs.self.homeModules.neovim;
         neovim = inputs.wrappers.lib.mkInstallModule {
           name = "neovim";
           value = inputs.self.nvimWrapper;
@@ -171,26 +172,26 @@
             "packages"
           ];
         };
+        neovim-dev = inputs.wrappers.lib.mkInstallModule {
+          name = "neovim";
+          value = inputs.self.nvimWrapper;
+          settings.dev_mode = true;
+          loc = [
+            "home"
+            "packages"
+          ];
+        };
       };
 
-      flake.wrappers.neovim = {
-        config,
-        wlib,
-        lib,
-        pkgs,
-        ...
-      }: {
-        imports = [inputs.self.nvimWrapper];
-      };
-      flake.wrappers.neovim-dev = {
-        config,
-        wlib,
-        lib,
-        pkgs,
-        ...
-      }: {
-        imports = [inputs.self.nvimWrapper];
-        settings.test_mode = true;
+      flake.wrappers = {
+        default = inputs.self.wrappers.neovim;
+        neovim = {...}: {
+          imports = [inputs.self.nvimWrapper];
+        };
+        neovim-dev = {...}: {
+          imports = [inputs.self.nvimWrapper];
+          settings.dev_mode = true;
+        };
       };
     };
 }
