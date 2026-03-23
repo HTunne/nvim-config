@@ -173,7 +173,7 @@
           ];
         };
         neovim-dev = inputs.wrappers.lib.mkInstallModule {
-          name = "neovim";
+          name = "neovim-dev";
           value = inputs.self.nvimWrapper;
           settings.dev_mode = true;
           loc = [
