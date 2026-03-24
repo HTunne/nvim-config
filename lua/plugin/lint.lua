@@ -4,7 +4,7 @@ return {
     after = function()
       require('lint').linters_by_ft = {
         cmake = {
-          'cmakelint',
+          'cmake_lint',
         },
         lua = {
           'selene',
