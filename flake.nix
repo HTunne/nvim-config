@@ -81,6 +81,7 @@
           pkgs.delta
           pkgs.fd
           pkgs.git
+          pkgs.typos-lsp
 
           # bash
           pkgs.bash-language-server
@@ -167,10 +168,6 @@
         neovim = inputs.wrappers.lib.mkInstallModule {
           name = "neovim";
           value = inputs.self.nvimWrapper;
-          loc = [
-            "home"
-            "packages"
-          ];
         };
       };
 
@@ -179,7 +176,6 @@
         neovim = inputs.wrappers.lib.mkInstallModule {
           name = "neovim";
           value = inputs.self.nvimWrapper;
-          settings.dev_mode = true;
           loc = [
             "home"
             "packages"
