@@ -1,6 +1,7 @@
 return {
   src = 'https://github.com/stevearc/oil.nvim',
   data = {
+    lazy = false,
     after = function()
       require('oil').setup()
     end,
