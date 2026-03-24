@@ -21,18 +21,25 @@ return {
       },
     },
   }),
-  on_attach = function(_, _)
-    vim.api.nvim_create_user_command('Daily', function(args)
-      vim.lsp.buf.execute_command({ command = 'jump', arguments = { args.args } })
+  on_attach = function(client, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, 'Daily', function(args)
+      -- print(vim.inspect(args))
+      client:exec_cmd({
+        title = 'Daily',
+        command = 'jump',
+        arguments = { args.args },
+      }, { bufnr = bufnr }, function(err, result)
+        if err ~= nil then
+          vim.api.nvim_echo({ { 'markdown-oxide jump error\n' }, { err.message } }, true, {})
+          return
+        end
+        if result ~= nil then
+          vim.api.nvim_echo({ { vim.inspect(result) } }, false, {})
+        end
+      end)
     end, { desc = 'Open daily note', nargs = '*' })
-    vim.keymap.set('n', '<leader>nt', function()
-      vim.lsp.buf.execute_command({ command = 'jump', arguments = { 'today' } })
-    end, { desc = 'open todays daily note' })
-    vim.keymap.set('n', '<leader>nm', function()
-      vim.lsp.buf.execute_command({ command = 'jump', arguments = { 'tomorrow' } })
-    end, { desc = 'open tomorrows daily note' })
-    vim.keymap.set('n', '<leader>ny', function()
-      vim.lsp.buf.execute_command({ command = 'jump', arguments = { 'yesterday' } })
-    end, { desc = 'open yesterdays daily note' })
+    vim.keymap.set('n', '<leader>nt', '<cmd>Daily today<cr>', { desc = 'open todays daily note' })
+    vim.keymap.set('n', '<leader>nm', '<cmd>Daily tomorrow<cr>', { desc = 'open tomorrows daily note' })
+    vim.keymap.set('n', '<leader>ny', '<cmd>Daily yesterday<cr>', { desc = 'open yesterdays daily note' })
   end,
 }
