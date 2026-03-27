@@ -6,7 +6,7 @@ return {
       'nvim-treesitter-textobjects',
       'nvim-treesitter-context',
       'nvim-biscuits',
-      'mini',
+      'mini.nvim',
       'treesj',
     },
     after = function()

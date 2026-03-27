@@ -1,5 +1,5 @@
 return {
-  src = 'https://github.com/L3MON4D3/LuaSnip',
+  src = 'https://github.com/L3MON4D3/luasnip',
   data = {
     dep_of = { 'blink.cmp' },
     after = function()
