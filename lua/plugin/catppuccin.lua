@@ -1,5 +1,5 @@
 return {
-  name = 'catppuccin',
+  name = 'catppuccin-nvim',
   src = 'https://github.com/catppuccin/nvim',
   data = {
     colorscheme = 'catppuccin',
