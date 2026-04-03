@@ -92,7 +92,6 @@
           pkgs.cmake-language-server
           pkgs.cmake-format
           # js/ts
-          pkgs.nodePackages.typescript-language-server
           pkgs.tailwindcss-language-server
           pkgs.prettierd
           # lua
