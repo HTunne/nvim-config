@@ -10,6 +10,7 @@ vim.keymap.set('n', '<esc>', '<cmd>noh<CR>', { desc = 'clear highlights' })
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==', { desc = 'move line down' })
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==', { desc = 'move line up' })
 vim.keymap.set('n', '<leader>o', 'm`o<Esc>0D``', { desc = 'newline below' })
+vim.keymap.set('n', '<leader>u', '<cmd>Undotree<CR>', { desc = 'open undotree', silent = true })
 
 -- insert mode mappings
 vim.keymap.set('i', ',', ',<c-g>u', { desc = 'set undo breakpoint on ,' })
@@ -18,8 +19,8 @@ vim.keymap.set('i', '!', '!<c-g>u', { desc = 'set undo breakpoint on !' })
 vim.keymap.set('i', '?', '?<c-g>u', { desc = 'set undo breakpoint on ?' })
 
 -- visual mode
-vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { desc = 'move highlighted region down' })
-vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'move highlighted region up' })
+vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { desc = 'move highlighted region down', silent = true })
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'move highlighted region up', silent = true })
 
 -- terminal mode mappings
 vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'exit terminal mode' })
