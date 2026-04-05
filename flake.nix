@@ -192,5 +192,25 @@
           settings.dev_mode = true;
         };
       };
+
+      perSystem = {
+        pkgs,
+        lib,
+        self',
+        ...
+      }: {
+        packages.neovim-dynamic = pkgs.writeShellApplication {
+          name = "nvim";
+          text = ''
+            if [ -d ~/.config/nvim ]; then
+                # start dev mode
+                ${lib.getExe self'.packages.neovim-dev} "$@"
+            else
+                # start normal mode
+                ${lib.getExe self'.packages.neovim} "$@"
+            fi
+          '';
+        };
+      };
     };
 }
