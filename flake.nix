@@ -201,7 +201,7 @@
         ...
       }: {
         packages.neovim-dynamic = pkgs.writeShellApplication {
-          name = "nvim";
+          name = "vim";
           text = ''
             if [ -d ~/.config/nvim ]; then
                 # start dev mode
