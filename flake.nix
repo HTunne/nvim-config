@@ -34,6 +34,7 @@
         ...
       }: {
         imports = [wlib.wrapperModules.neovim];
+        config.package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
 
         options.settings.dev_mode = lib.mkOption {
           type = lib.types.bool;
