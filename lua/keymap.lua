@@ -47,5 +47,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format({ async = true })
     end, { desc = 'format current buffer' })
     vim.keymap.set('n', '<leader>lc', vim.lsp.buf.code_action, { desc = 'code action' })
+    vim.keymap.set('n', '<leader>ls', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'switch source/header' })
+    vim.keymap.set('n', '<leader>lt', '<cmd>LspClangdShowSymbolInfo<cr>', { desc = 'show type hierarchy' })
   end,
 })

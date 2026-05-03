@@ -1,6 +1,6 @@
 vim.lsp.enable('arduino_language_server')
 vim.lsp.enable('bashls')
-vim.lsp.enable('clangd_custom')
+vim.lsp.enable('clangd')
 vim.lsp.enable('cmake')
 vim.lsp.enable('html')
 vim.lsp.enable('kotlin_language_server')
