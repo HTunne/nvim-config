@@ -111,6 +111,7 @@
           pkgs.yapf
           pkgs.isort
           pkgs.python314Packages.vulture
+          pkgs.python314Packages.python-lsp-server
           # qml
           pkgs.kdePackages.qtdeclarative
           # typescript
