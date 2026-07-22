@@ -12,6 +12,7 @@ return {
           python = { 'isort', 'yapf' },
           qml = { 'qmlformat',  'pyside6_qmlformat', stop_after_first = true },
           typescript = { 'prettierd', 'prettier', stop_after_first = true },
+          vue = { 'prettierd', 'prettier', stop_after_first = true },
           sh = { 'shfmt' },
         },
         formatters = {
