@@ -5,7 +5,6 @@
 require('settings')
 require('keymap')
 require('lsp')
-require('obsidian')
 
 local plugins = {}
 

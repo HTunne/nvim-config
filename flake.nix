@@ -75,7 +75,7 @@
           '';
         };
 
-        config.extraPackages = [
+        config.runtimePkgs = [
           # misc
           pkgs.ripgrep
           pkgs.bat
@@ -117,7 +117,7 @@
           # typescript
           pkgs.typescript-language-server
           # vue
-          pkgs.vscode-extensions.vue.volar
+          pkgs.vue-language-server
         ];
 
         config.specs.opt = let
@@ -146,6 +146,7 @@
             p.marks-nvim
             p.mini-nvim
             p.neogit
+            p.obsidian-nvim
             p.oil-nvim
             p.plenary-nvim
             p.quicker-nvim
@@ -185,7 +186,9 @@
       };
 
       flake.wrappers = {
-        default = inputs.self.wrappers.neovim;
+        default = {...}: {
+          imports = [inputs.self.nvimWrapper];
+        };
         neovim = {...}: {
           imports = [inputs.self.nvimWrapper];
         };

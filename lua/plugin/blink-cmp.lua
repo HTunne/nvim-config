@@ -5,6 +5,13 @@ return {
     after = function()
       require('blink.cmp').setup({
         snippets = { preset = 'luasnip' },
+        sources = {
+          per_filetype = {
+            markdown = {
+              'lsp',
+            },
+          },
+        },
       })
     end,
   },

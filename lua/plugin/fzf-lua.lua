@@ -26,5 +26,6 @@ return {
         require('fzf-lua').grep_cword()
       end, { desc = 'find current word' })
     end,
+    dep_of = { 'obsidian' },
   },
 }
