@@ -95,6 +95,8 @@
           # js/ts
           pkgs.tailwindcss-language-server
           pkgs.prettierd
+          # json
+          pkgs.jq
           # lua
           pkgs.lua-language-server
           pkgs.selene
