@@ -1,6 +1,7 @@
 return {
   src = 'https://github.com/ibhagwan/fzf-lua',
   data = {
+    lazy = false,
     after = function()
       require('fzf-lua').setup({
         'ivy',
@@ -26,6 +27,6 @@ return {
         require('fzf-lua').grep_cword()
       end, { desc = 'find current word' })
     end,
-    dep_of = { 'obsidian' },
+    dep_of = { 'obsidian.nvim' },
   },
 }
